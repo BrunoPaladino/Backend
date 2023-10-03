@@ -1,24 +1,19 @@
-import ProductManager from '../classes/ProductManager.js';
 import express from 'express';
+import bodyParser from 'body-parser';
+import productRouter from './routes/products.js';
+import ProductManager from '../classes/ProductManager.js';
 
-const productManager = new ProductManager();        //INSTANCIO UN OBJETO CON LA CLASE PRODUCT MANAGER IMPORTADA
+const productManager = new ProductManager();
 const app=express();
+app.use(bodyParser.json());
 app.use(express.urlencoded({extended:true}));
 
-//SEARCH FOR A LIMITED QUANTITY OF PRODUCTS
-app.get('/products', (req,res)=>{
-    let quantity = req.query.limit;
-    const listOfProducts = productManager.getProducts();
+app.use('/api/products', productRouter);
 
-if(quantity){
-    const limitedProducts = listOfProducts.slice(0, quantity);
-    return res.send(limitedProducts);
-    } else {
-        return res.send({listOfProducts});
-    }
-});
 
-//SEARCH WITH A DINAMIC ID
+
+
+/* //SEARCH WITH A DINAMIC ID
 app.get('/products/:pid', (req, res)=>{
     let productID = Number(req.params.pid);
     const listOfProducts = productManager.getProducts();
@@ -29,7 +24,7 @@ app.get('/products/:pid', (req, res)=>{
     } else {
         return res.send({error: "Product not found"})
     }
-})
+}) */
 
 //SERVER ACTIVATION
 app.listen('8080', ()=>{
