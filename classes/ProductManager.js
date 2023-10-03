@@ -1,6 +1,5 @@
 import fs from 'fs';
 
-
 class ProductManager{
     constructor(){
         this.products = [];
@@ -30,7 +29,9 @@ class ProductManager{
                 price: productAdded.price,
                 thumbnail : productAdded.thumbnail,
                 code : productAdded.code,
+                status: productAdded.status,
                 stock: productAdded.stock,
+                category: productAdded.category,
             };
 
             this.products.push(newProduct);
@@ -88,8 +89,8 @@ class ProductManager{
     }
 }
 
-const productManager = new ProductManager();
-productManager.getProducts();
+//const productManager = new ProductManager();
+//productManager.getProducts();
 
 // PRODUCTS
 const product1 = {
@@ -97,8 +98,10 @@ const product1 = {
     description: "Description1",
     thumbnail : "Image1",
     price: "Price1",
+    status: true,
     code : "Code1",
     stock: "Stock1",
+    category: "Category1",
 };
 
 const product2 = {
@@ -106,8 +109,10 @@ const product2 = {
     description: "Description2",
     thumbnail : "Image2",
     price: "Price2",
+    status: true,
     code : "Code2",
     stock: "Stock2",
+    category: "Category2",
 };
 
 const product3 = {
@@ -115,8 +120,10 @@ const product3 = {
     description: "Description3",
     thumbnail : "Image3",
     price: "Price3",
+    status: true,
     code : "Code3",
     stock: "Stock3",
+    category: "Category3",
 };
 
 const product4 = {
@@ -124,8 +131,10 @@ const product4 = {
     description: "Description4",
     thumbnail : "Image4",
     price: "Price4",
+    status: true,
     code : "Code4",
     stock: "Stock4",
+    category: "Category4",
 };
 
 //ADD PRODUCT
@@ -143,8 +152,10 @@ const informationToUpdate = {
     description: "Updated Description",
     thumbnail : "Updated Image",
     price: "Updated Price",
+    status: false,
     code : "Updated Code",
     stock: "Updated Stock",
+    category: "Updated Category",
 };
 //productManager.updateProduct(1, informationToUpdate);
 
