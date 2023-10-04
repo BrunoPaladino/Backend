@@ -1,4 +1,4 @@
-import express, { Router } from 'express';
+import express from 'express';
 import ProductManager from '../../classes/ProductManager.js';
 const productRouter = express.Router();
 

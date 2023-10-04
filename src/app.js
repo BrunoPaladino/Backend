@@ -1,7 +1,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import productRouter from './routes/products.js';
+import cartRouter from './routes/carts.js';
 import ProductManager from '../classes/ProductManager.js';
+import CartManager from '../classes/CartManager.js';
 
 const productManager = new ProductManager();
 const app=express();
@@ -9,7 +11,7 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({extended:true}));
 
 app.use('/api/products', productRouter);
-
+app.use('/api/carts', cartRouter);
 
 
 
