@@ -21,4 +21,12 @@ cartRouter.post('/:cid/product/:pid', (req,res)=>{
     res.status(200).send({carts: listOfCarts});
 })
 
+//LOOK PRODUCTS IN A CART
+cartRouter.get('/:cid', (req,res)=>{
+    let cartID = Number(req.params.cid);
+    const listOfProducts = cartManager.seeProducts(cartID);
+
+    res.status(200).send({products: listOfProducts});
+})
+
 export default cartRouter;

@@ -43,11 +43,9 @@ class CartManager{
 
     //AGREGAR PRODUCTO A UN CARRITO
     addProduct = (idCartToAdd, idProductToAdd) => {
-        console.log(idCartToAdd);
         const JSONreaded = fs.readFileSync(this.path, "utf-8");
         const productsToObject = JSON.parse(JSONreaded);
         let cartSearched = productsToObject.find((element) => element.id === idCartToAdd);
-        console.log(cartSearched);
         if(cartSearched){
 
             const newProduct ={
@@ -60,6 +58,18 @@ class CartManager{
             fs.writeFileSync(this.path, productsToJSON);
         } else {
             console.error("The code of the cart does not belongs to our system");
+        }
+    }
+
+    //VER CONTENIDO DE CARRITO
+    seeProducts = (idCartToWatch) =>{
+        const JSONreaded = fs.readFileSync(this.path, "utf-8");
+        const productsToObject = JSON.parse(JSONreaded);
+        let cartSearched = productsToObject.find((element) => element.id === idCartToWatch);
+        if(cartSearched){
+                return cartSearched.products;
+            } else {
+                console.error("The code of the cart does not belongs to our system");
         }
     }
 
