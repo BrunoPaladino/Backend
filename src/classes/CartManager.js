@@ -46,7 +46,8 @@ class CartManager{
         const JSONreaded = fs.readFileSync(this.path, "utf-8");
         const productsToObject = JSON.parse(JSONreaded);
         let cartSearched = productsToObject.find((element) => element.id === idCartToAdd);
-        if(cartSearched){
+        let cartUbication = cartSearched.products.findIndex((element) => element.id ===idProductToAdd);
+        if(cartSearched && cartUbication==-1){
 
             const newProduct ={
                 id: idProductToAdd,
@@ -56,7 +57,11 @@ class CartManager{
             cartSearched.products.push(newProduct);
             const productsToJSON = JSON.stringify(productsToObject);       //transformo el array a archivo tipo JSON y lo escribo con fs.write
             fs.writeFileSync(this.path, productsToJSON);
-        } else {
+        } else if(cartSearched && cartUbication!=-1){
+            cartSearched.products[cartUbication].quantity++;
+            const productsToJSON = JSON.stringify(productsToObject);
+            fs.writeFileSync(this.path, productsToJSON);
+        }else{
             console.error("The code of the cart does not belongs to our system");
         }
     }
