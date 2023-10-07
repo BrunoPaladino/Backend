@@ -4,7 +4,7 @@ class CartManager{
     constructor(){
         this.carts = [];
         this.cartId = 1;
-        this.path = "../cart.json";
+        this.path = "../../cart.json";
 
         this.productId = 1;
     }

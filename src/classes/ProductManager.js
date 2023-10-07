@@ -4,7 +4,7 @@ class ProductManager{
     constructor(){
         this.products = [];
         this.productId = 1;
-        this.path = "../products.json";
+        this.path = "../../products.json";
     }
 
     getProducts(){
@@ -18,10 +18,32 @@ class ProductManager{
     }
 
     addProduct = (productAdded) => {
-        const codeProductAdded = productAdded.code;
-        let productInSystem = this.products.some((element) => element.code === codeProductAdded);
-        if(productInSystem != true){
+        if(fs.existsSync(this.path)){
+            const JSONreaded = fs.readFileSync(this.path, "utf-8");
+            const productsToObject = JSON.parse(JSONreaded);
+            const codeProductAdded = productAdded.code;
+            let productInSystem = productsToObject.some((element) => element.code === codeProductAdded);
+            if(productInSystem != true){
 
+                const newProduct ={
+                    id: this.productId++,
+                    title: productAdded.title,
+                    description: productAdded.description,
+                    price: productAdded.price,
+                    thumbnail : productAdded.thumbnail,
+                    code : productAdded.code,
+                    status: productAdded.status,
+                    stock: productAdded.stock,
+                    category: productAdded.category,
+                };
+
+                productsToObject.push(newProduct);
+                const productsToJSON = JSON.stringify(productsToObject);       //transformo el array a archivo tipo JSON y lo escribo con fs.write
+                fs.writeFileSync(this.path, productsToJSON);
+            } else {
+                console.error("The code of the product is already in our system");
+            }
+            } else {
             const newProduct ={
                 id: this.productId++,
                 title: productAdded.title,
@@ -35,10 +57,8 @@ class ProductManager{
             };
 
             this.products.push(newProduct);
-            const productsToJSON = JSON.stringify(this.products);       //transformo el array a archivo tipo JSON y lo escribo con fs.write
+            const productsToJSON = JSON.stringify(this.products);
             fs.writeFileSync(this.path, productsToJSON);
-        } else {
-            console.error("The code of the product is already in our system");
         }
     }
 
@@ -89,7 +109,7 @@ class ProductManager{
     }
 }
 
-//const productManager = new ProductManager();
+const productManager = new ProductManager();
 //productManager.getProducts();
 
 // PRODUCTS
@@ -138,8 +158,8 @@ const product4 = {
 };
 
 //ADD PRODUCT
-//productManager.addProduct(product1);
-//productManager.addProduct(product2);
+productManager.addProduct(product1);
+productManager.addProduct(product2);
 //productManager.addProduct(product3);
 
 //SEARCH BY ID
