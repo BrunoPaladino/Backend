@@ -109,7 +109,7 @@ class ProductManager{
     }
 }
 
-const productManager = new ProductManager();
+//const productManager = new ProductManager();
 //productManager.getProducts();
 
 // PRODUCTS
@@ -158,8 +158,8 @@ const product4 = {
 };
 
 //ADD PRODUCT
-productManager.addProduct(product1);
-productManager.addProduct(product2);
+//productManager.addProduct(product1);
+//productManager.addProduct(product2);
 //productManager.addProduct(product3);
 
 //SEARCH BY ID
