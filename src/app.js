@@ -7,8 +7,8 @@ import cartRouter from './routes/carts.js';
 import viewsRouter from './routes/views.router.js';
 import { Server } from 'socket.io';
 
-const app=express();
-const httpServer = app.listen (8080, ()=>{console.log("Servidor 8080 activo")});
+const app = express();
+const httpServer = app.listen (8080, ()=>{console.log("Server 8080 activated")});
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended:true}));
 
@@ -16,10 +16,9 @@ app.use('/api/products', productRouter);
 app.use('/api/carts', cartRouter);
 
 //WEBSOCKETS
-const socket = io();
-socket.emit('message', 'Hola, soy Bruno');
 const socketServer = new Server(httpServer); //es un servidor para trabajar con sockets
 socketServer.on('connection', socket=>{     //socketServer.on se usa para escuchar la conexion de un socket nuevo
+    console.log("User connected");
     socket.on('message', data=>{
         console.log(data);
     })
