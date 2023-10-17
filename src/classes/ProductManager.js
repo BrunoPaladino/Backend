@@ -23,10 +23,11 @@ class ProductManager{
             const productsToObject = JSON.parse(JSONreaded);
             const codeProductAdded = productAdded.code;
             let productInSystem = productsToObject.some((element) => element.code === codeProductAdded);
+            const newID = productsToObject.length > 0 ? productsToObject[productsToObject.length-1].id+1 :1;
             if(productInSystem != true){
 
                 const newProduct ={
-                    id: this.productId++,
+                    id: newID,
                     title: productAdded.title,
                     description: productAdded.description,
                     price: productAdded.price,
@@ -93,11 +94,12 @@ class ProductManager{
     }
 
     deleteProduct(productId){
+        let productIDNumber = Number(productId);        //parceo a Number ya que cuando recibo datos de un formulario web, la variable se toma como string
         const JSONreaded = fs.readFileSync(this.path,"utf-8");
         const productsToObject = JSON.parse(JSONreaded);
-        let productInSystem = productsToObject.some((element) => element.id === productId);     //some devuelve una variable bool
+        let productInSystem = productsToObject.some((element) => element.id === productIDNumber);     //some devuelve una variable bool
         if(productInSystem){
-            const ubication = productsToObject.findIndex((element) => element.id === productId);
+            const ubication = productsToObject.findIndex((element) => element.id === productIDNumber);
             productsToObject.splice(ubication,1);
             console.log(productsToObject);
             const productsToJSON = JSON.stringify(productsToObject);

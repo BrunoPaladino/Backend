@@ -1,6 +1,110 @@
 <div>
+    <h1>Real Time List</h1>
 
+    <div id="formContainer">
+        <fieldset>
+            <legend>New Product</legend>
+                <label for="productTitle">Product Title:</label>
+                <input type="text" name="Product ID" placeholder="Product Title" id="productTitle" required>
+                <br>
+                <label for="productDescription">Product Description:</label>
+                <input type="text" name="Product Description" placeholder="Product Description" id="productDescription" required>
+                <br>
+                <label for="productPrice">Product Price:</label>
+                <input type="text" name="Product Price" placeholder="Product Price" id="productPrice" required>
+                <br>
+                <label for="productCode">Product Code:</label>
+                <input type="text" name="Product Code" placeholder="Product Code" id="productCode" required>
+                <br>
+                    <div>
+                        <button type="button" class="addProduct"> Add to cart </button>
+                    </div>
+        </fieldset>
+    </div>
+
+    <div id="formContainer">
+        <fieldset>
+            <legend>Delete Product</legend>
+                <label for="productID">Product ID:</label>
+                <input type="text" name="Product ID" placeholder="Product ID" id="productID" required>
+                <br>
+                    <div>
+                        <button type="button" class="removeProduct"> Remove from cart </button>
+                    </div>
+        </fieldset>
+    </div>
+
+
+    <div>
+    {{#each listOfProducts}}
+    <div>
+        <h2>Title: {{this.title}}</h2>
+        <p>Description {{this.description}}</p>
+        <p>Images: {{this.thumbnail}}</p>
+        <p>Price: {{this.price}}</p>
+        <p>Status: {{this.status}}</p>
+        <p>Code: {{this.code}}</p>
+        <p>Stock: {{this.stock}}</p>
+        <p>Category: {{this.category}}</p>
+    </div>
+    {{/each}}
+</div>
 </div>
 
 <script src="/socket.io/socket.io.js" /></script>
-<script src="../public/js/index.js" /></script>
+<script>
+
+    let id = 1;
+    const socket = io();
+
+    //ADD PRODUCT FUNCTION
+    function addProduct(){
+        let productIDToAdd = document.getElementById("productTitle").value;
+        let productDescriptionToAdd = document.getElementById("productDescription").value;
+        let productPriceToAdd = document.getElementById("productPrice").value;
+        let productCodeToAdd = document.getElementById("productCode").value;
+
+        const newProduct ={
+            id: id++,
+            title: productIDToAdd,
+            description: productDescriptionToAdd,
+            price: productPriceToAdd,
+            thumbnail :'toAdd',
+            code : productCodeToAdd,
+            status:'toAdd',
+            stock:'toAdd',
+            category: 'toAdd',
+        };
+
+        socket.emit('addProduct', newProduct);             //con el emit avisamos al servidor socket del evento addProduct y el producto a agregar
+        console.log("Producto agregado con ID:" , productIDToAdd);
+        console.log("Producto agregado con description:" , productDescriptionToAdd);
+        console.log("Producto agregado con price:" , productPriceToAdd);
+        console.log("Producto agregado con code:" , productCodeToAdd);
+    };
+
+    //REMOVE PRODUCT FUNCTION
+    function removeProduct(){
+        const productIDToRemove = document.getElementById("productID").value;
+        socket.emit('removeProduct', productIDToRemove);
+        console.log("Producto removido con ID:" , productIDToRemove);
+    }
+
+    //Actualizacion del listado
+    socket.on('productListUpdated', (productList) => {
+
+    });
+
+
+    //ADD PRODUCT LISTENER
+    buttonAdd = document.querySelector(".addProduct");
+    buttonAdd.addEventListener("click", addProduct);
+
+    //REMOVE PRODUCT LISTENER
+    buttonRemove = document.querySelector(".removeProduct");
+    buttonRemove.addEventListener("click", removeProduct);
+
+
+
+</script>
+<script src="/js/index.js" /></script>
