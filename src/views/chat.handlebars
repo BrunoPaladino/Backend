@@ -1,0 +1,14 @@
+<div>
+    <h1>eCommerce Chat</h1>
+</div>
+
+<div>
+    <input id='chatBox'>{{!-- Caja de escritura de mensaje --}}
+</div>
+<div>
+    <p id="messageLogs"></p>{{!-- Donde apareceran los mensajes enviados --}}
+</div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>    {{!-- Importacion de SweetAlert --}}
+<script src="/socket.io/socket.io.js" /></script>       {{!-- Los scripts comunican las view con el socket --}}
+<script src="/js/index.js" /></script>  {{!-- Con esta importacion, traigo el contenido del archivo index.js --}}

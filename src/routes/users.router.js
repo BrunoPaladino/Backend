@@ -1,5 +1,5 @@
 import express from 'express';
-import userModel from '../models/user.model.js';
+import userModel from '../classes/models/user.model.js';
 
 const usersRouter = express.Router();
 
@@ -27,7 +27,7 @@ usersRouter.post('/', async (req,res)=>{
                         lastName,
                         email
                 });
-                res.send({status:"success", payload: result});  //se devuelve el usuario obtenido
+                res.send({status:"success", payload: result});  //se devuelve el usuario agregado
         }
 });
 

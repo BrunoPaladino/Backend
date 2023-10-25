@@ -1,10 +1,14 @@
 import express from 'express';
 import ProductManager from '../classes/ProductManager.js';
-const productRouter = express.Router();
+import productModel from '../classes/models/products.model.js';     //importo el modelo de producto de MongoDB
 
+const productRouter = express.Router();
 const productManager = new ProductManager(); 
 
-//SEARCH FOR A LIMITED QUANTITY OF PRODUCTS OR ALL THE PRODUCTS
+/* 
+* FUNCTIONS WITH FILESYSTEM 
+*/
+/* //SEARCH FOR A LIMITED QUANTITY OF PRODUCTS OR ALL THE PRODUCTS
 productRouter.get('/', (req,res) =>{
     let quantity = req.query.limit;
     const listOfProducts = productManager.getProducts();
@@ -55,5 +59,66 @@ productRouter.delete('/:pid', (req,res)=>{
     const listOfProducts = productManager.getProducts();    //me trae el listado de productos con el metodo de ProductManager
     res.status(200).json({products: listOfProducts});
 })
+ */
+/* 
+* END FUNCTIONS WITH FILESYSTEM 
+*/
+
+
+
+/* 
+* FUNCTIONS WITH MONGOOSE 
+*/
+//LIST OF PRODUCTS
+productRouter.get('/', async (req,res)=>{         //las funciones vinculadas a la BD son asincronicas, por eso el "async"
+    const products = await productModel.find();
+    res.json({status: "success", payload: products});
+});
+
+//SEARCH PRODUCT BY ID
+productRouter.get('/:pid', async (req,res)=>{
+    const productID = req.params.pid;
+    const result = await productModel.findOne({_id: productID});
+    res.json({status: "success", payload: result});
+});
+
+//ADD PRODUCT
+productRouter.post('/', async (req,res)=>{
+    let{title, description, thumbnail, price, status, code, stock, category} = req.body;
+    if(!title || !description || !thumbnail || !price || !status || !code || !stock || !category){  //si los datos no estan completos, da error
+            return res.send({status:"error", error:"Incomplete values"});
+    } else {
+            let result = await productModel.create({
+                title,
+                description,
+                thumbnail,
+                price,
+                status,
+                code,
+                stock,
+                category
+            });
+            res.send({status:"success", payload: result});  //se devuelve el producto agregado
+    }
+});
+
+//UPDATE PRODUCT
+productRouter.put('/:pid', async (req, res) =>{
+    const productID = req.params.pid;
+    let dataToUpdate = req.body;
+    const result = await productModel.updateOne({_id: productID}, dataToUpdate);
+    res.send ({status: "success", payload: result});
+});
+
+//DELETE PRODUCT
+productRouter.delete('/:pid', async (req,res)=>{
+    const productID = req.params.pid;
+    const result = await productModel.deleteOne({_id: productID});
+    res.send ({status: "success", payload: result});
+})
+/* 
+* END FUNCTIONS WITH MONGOOSE
+*/
+
 
 export default productRouter;

@@ -9,17 +9,27 @@ import { Server } from 'socket.io';     //Server es una clase que representa al 
 import http from 'http';
 import ProductManager from './classes/ProductManager.js';
 import usersRouter from './routes/users.router.js';
-
 import mongoose from 'mongoose';
+
+//MONGOOSE
 //creo una constante para ingresar el link para conectar con Mongo Atlas (DB en internet)
 const url = 'mongodb+srv://BrunoPaladino:E19R9942sGd0IEJw@clusterr2.bxmstih.mongodb.net/';
 //la conexion de mongoose funciona como una promesa
-mongoose.connect(url, {dbName: 'myDB'})     //el segundo parametro especifica la coleccion a vincular
+/* mongoose.connect(url, {dbName: 'myDB'})     //el segundo parametro especifica la coleccion a vincular
     .then(() => {
-        console.log("Database connected");
+        console.log("Database myDB connected");
+    })                                              //CONSULTAR, COMO CONECTAR DOS BASES DE DATOS
+    .catch ((error) => {                           //SI SACO EL COMENTARIO, SE SUPERPONE MYDB CON ECOMMERCE
+        console.error("Cannot connect to database");
+    }); */
+
+//Products Data Base
+mongoose.connect(url, {dbName: 'ecommerce'})     //el segundo parametro especifica la Base de Datos a vincular
+    .then(() => {                                // la coleccion ya la definimos en el modelo(esquema)
+        console.log("Database products connected");
     })
     .catch ((error) => {
-        console.error("Cannot connect to database");
+        console.error("Cannot connect to database products");
     });
 
 
@@ -61,7 +71,7 @@ socketServer.on('connection', (socket) => {     //socketServer.on se usa para es
 app.use(bodyParser.json());
 app.use(express.json());        //para poder recibir req.body
 app.use(express.urlencoded({extended:true}));
-app.use('/api/products', productRouter);    //(endpoint, ruta vinculada al endpoint)
+app.use('/api/products', productRouter);    // sintaxis : (endpoint, ruta vinculada al endpoint)
 app.use('/api/carts', cartRouter);
 app.use('/api/users', usersRouter);
 
