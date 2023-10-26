@@ -30,6 +30,12 @@ router.get('/realtimeproducts', (req,res)=>{
 })
 
 
+//CHAT
+router.get('/chat', (req,res)=>{
+
+    res.render('chat', );  //metodo para renderizar render(nombre de plantilla, objeto para reemplazar en la plantilla)
+})
+
 //METODO DE PRUEBA CON INDEX
 router.get('/index', (req,res)=>{
     let testUser = {

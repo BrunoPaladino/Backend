@@ -1,9 +1,9 @@
 const socket = io();        //por medio de socket nos comunicamos con el servidor
 
-let user;       //usuario que ingresa su informacion
-let chatBox = document.getElementById('chatBox');   //traemos el chatBox con su ID
+/* let user;       //usuario que ingresa su informacion
+let chatBox = document.getElementById('chatBox');   //traemos el chatBox con su ID */
 
-//Animacion SweetAlert para ingresar usuario
+/* //Animacion SweetAlert para ingresar usuario
 Swal.fire({
     title: 'Identificate',
     text: 'Ingresa el usuario:',
@@ -20,9 +20,9 @@ Swal.fire({
         toast: true,
         position : 'top-right'
     })
-});
+}); */
 
-chatBox.addEventListener('keyup', (event) =>{
+/* chatBox.addEventListener('keyup', (event) =>{
     if(event.key === 'Enter'){
         console.log("hola");
         if(chatBox.value.trim().length>0){  //corroboro que el mensaje no este vacio
@@ -39,7 +39,7 @@ socket.on('messageLogs', (data)=>{
         messages = messages + `${message.user} dice : ${message.message} </br>`;
     })
     log.innerHTML = messages;       //escribe en el html los mensajes
-})
+}) */
 
 
 

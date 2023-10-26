@@ -4,7 +4,7 @@
 */
 import mongoose from "mongoose";
 
-const messageCollection = 'users'; //messageCollection es la coleccion en la base de datos
+const messageCollection = 'messages'; //messageCollection es la coleccion en la base de datos
 
 /*
 * Aqui planteamos las propiedades que queremos que tengan los mensajes de la DB
@@ -23,4 +23,4 @@ const messageSchema = new mongoose.Schema({
 */
 const messageModel = mongoose.model(messageCollection, messageSchema);
 
-export default userModel;
+export default messageModel;

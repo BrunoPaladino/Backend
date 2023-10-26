@@ -11,6 +11,8 @@ import ProductManager from './classes/ProductManager.js';
 import usersRouter from './routes/users.router.js';
 import mongoose from 'mongoose';
 
+import messageModel from './classes/models/messages.model.js'
+
 //MONGOOSE
 //creo una constante para ingresar el link para conectar con Mongo Atlas (DB en internet)
 const url = 'mongodb+srv://BrunoPaladino:E19R9942sGd0IEJw@clusterr2.bxmstih.mongodb.net/';
@@ -54,11 +56,21 @@ socketServer.on('connection', (socket) => {     //socketServer.on se usa para es
         //socketServer.emit('productListUpdated', productManager.getProducts());
     })    
 
-    socket.on('message', (data)=>{
+    socket.on('message', async (data)=>{
         console.log(data);
+        let existingMessage = await messageModel.findOne({userEmail: data.user});       //busco si el mismo usuario ingreso algun mensaje antes
+        if(existingMessage){
+            existingMessage.message = data.message;
+            await existingMessage.save();
+        } else {
+            let newMessage = await messageModel.create({
+                userEmail: data.user,
+                message: data.message
+            })
+        }
         messages.push(data);    //guardamos los mensajes en el array messages
         socket.emit('messageLogs', messages);  //reenviamos los mensajes guardados en el array
-    });
+    })
 
     socket.on('disconnect',()=>{
         console.log('User  disconnected');
