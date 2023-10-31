@@ -1,6 +1,6 @@
 import express from 'express';
-import ProductManager from '../classes/ProductManager.js';
-import productModel from '../classes/models/products.model.js';     //importo el modelo de producto de MongoDB
+import ProductManager from '../dao/ProductManager.js';
+import productModel from '../dao/models/products.model.js';     //importo el modelo de producto de MongoDB
 
 const productRouter = express.Router();
 const productManager = new ProductManager(); 

@@ -7,31 +7,24 @@ import cartRouter from './routes/carts.js';
 import viewsRouter from './routes/views.router.js';
 import { Server } from 'socket.io';     //Server es una clase que representa al servidor WebSocket para comunicacion en tiempo real
 import http from 'http';
-import ProductManager from './classes/ProductManager.js';
+import ProductManager from './dao/ProductManager.js';
 import usersRouter from './routes/users.router.js';
 import mongoose from 'mongoose';
 
-import messageModel from './classes/models/messages.model.js'
+import messageModel from './dao/models/messages.model.js'
 
 //MONGOOSE
 //creo una constante para ingresar el link para conectar con Mongo Atlas (DB en internet)
 const url = 'mongodb+srv://BrunoPaladino:E19R9942sGd0IEJw@clusterr2.bxmstih.mongodb.net/';
-//la conexion de mongoose funciona como una promesa
-/* mongoose.connect(url, {dbName: 'myDB'})     //el segundo parametro especifica la coleccion a vincular
-    .then(() => {
-        console.log("Database myDB connected");
-    })                                              //CONSULTAR, COMO CONECTAR DOS BASES DE DATOS
-    .catch ((error) => {                           //SI SACO EL COMENTARIO, SE SUPERPONE MYDB CON ECOMMERCE
-        console.error("Cannot connect to database");
-    }); */
 
-//Products Data Base
+//Ecommerce Data Base
+//la conexion de mongoose funciona como una promesa
 mongoose.connect(url, {dbName: 'ecommerce'})     //el segundo parametro especifica la Base de Datos a vincular
     .then(() => {                                // la coleccion ya la definimos en el modelo(esquema)
-        console.log("Database products connected");
+        console.log("Database ecommerce connected");
     })
     .catch ((error) => {
-        console.error("Cannot connect to database products");
+        console.error("Cannot connect to database ecommerce");
     });
 
 
