@@ -1,0 +1,68 @@
+    <div id="formContainer">
+        <fieldset>
+            <legend>New Product</legend>
+                <label for="productTitle">Product Title:</label>
+                <input type="text" name="Product ID" placeholder="Product Title" id="productTitle" required>
+                <br>
+                <label for="productDescription">Product Description:</label>
+                <input type="text" name="Product Description" placeholder="Product Description" id="productDescription" required>
+                <br>
+                <label for="productPrice">Product Price:</label>
+                <input type="text" name="Product Price" placeholder="Product Price" id="productPrice" required>
+                <br>
+                <label for="productCode">Product Code:</label>
+                <input type="text" name="Product Code" placeholder="Product Code" id="productCode" required>
+                <br>
+                    <div>
+                        <button type="button" class="addProduct"> Add to cart </button>
+                    </div>
+        </fieldset>
+    </div>
+
+<div>
+    <h2>Cart: {{this.cartName}}</h2>
+    {{#each listOfProducts}}
+    <div>
+        <h3>Title: {{this.title}}</h3>
+        <p>Description {{this.description}}</p>
+        <p>Images: {{this.thumbnail}}</p>
+        <p>Price: {{this.price}}</p>
+        <p>Status: {{this.status}}</p>
+        <p>Code: {{this.code}}</p>
+        <p>Stock: {{this.stock}}</p>
+        <p>Category: {{this.category}}</p>
+    </div>
+    {{/each}}
+</div>
+
+<script src="/socket.io/socket.io.js" /></script>       {{!-- Los scripts comunican las view con el socket --}}
+<script src="/src/dao/models/carts.model.js"></script>
+<script>
+    const socket = io();
+
+    //ADD PRODUCT LISTENER
+    buttonAdd = document.querySelector(".addProduct");
+    buttonAdd.addEventListener("click", addProduct);
+
+        //ADD PRODUCT FUNCTION
+    function addProduct(){
+        let productIDToAdd = document.getElementById("productTitle").value;
+        let productDescriptionToAdd = document.getElementById("productDescription").value;
+        let productPriceToAdd = document.getElementById("productPrice").value;
+        let productCodeToAdd = document.getElementById("productCode").value;
+
+        const newProduct ={
+            title: productIDToAdd,
+            description: productDescriptionToAdd,
+            price: productPriceToAdd,
+            thumbnail :'toAdd',
+            code : productCodeToAdd,
+            status:'toAdd',
+            stock: 10,
+            category: 'toAdd',
+        };
+
+        socket.emit('addProductMongo', newProduct);
+    };
+</script>
+<script src="/js/index.js" /></script>

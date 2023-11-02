@@ -12,6 +12,7 @@ import usersRouter from './routes/users.router.js';
 import mongoose from 'mongoose';
 
 import messageModel from './dao/models/messages.model.js'
+import cartModel from './dao/models/carts.model.js'
 
 //MONGOOSE
 //creo una constante para ingresar el link para conectar con Mongo Atlas (DB en internet)
@@ -43,6 +44,12 @@ socketServer.on('connection', (socket) => {     //socketServer.on se usa para es
         productManager.addProduct(product);
         //socketServer.emit('productListUpdated', productManager.getProducts());
     });
+
+    socket.on('addProductMongo', async (newProduct)=>{
+        const listOfCarts = await cartModel.findOne();
+        listOfCarts.products.push(newProduct);
+        await listOfCarts.save();
+    })
 
     socket.on('removeProduct', (productID)=>{    //socket.on espera la ocurrencia del evento "removeProduct" (desde el lado del cliente) y un producto, para activarse
         productManager.deleteProduct(productID);

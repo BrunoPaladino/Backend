@@ -4,6 +4,7 @@ import ProductManager from "../dao/ProductManager.js";
 import { Server } from "socket.io";
 import http from 'http';
 import productModel from "../dao/models/products.model.js";
+import cartModel from "../dao/models/carts.model.js";
 
 const productManager = new ProductManager();
 const router = express.Router();
@@ -33,6 +34,29 @@ router.get('/', async (req,res)=>{
 
     res.render('home', {listOfProducts:simplifiedProducts});  //metodo para renderizar render(nombre de plantilla, objeto para reemplazar en la plantilla)
 })
+
+
+
+router.get('/cart', async (req,res)=>{
+    const listOfCarts = await cartModel.findOne();       //trae todos los carts con el esquema
+    const cartName = listOfCarts.cartName;
+    const listOfProductsFromCart = listOfCarts.products.map(product => ({     //hago un map porque trae los productos como array
+        title: product.title,
+        description: product.description,
+        thumbnail: product.thumbnail,
+        price: product.price,
+        status: product.status,
+        code: product.code,
+        stock: product.stock,
+        category: product.category
+    }));
+
+    res.render('cart', {listOfProducts:listOfProductsFromCart, cartName: cartName});  //metodo para renderizar render(nombre de plantilla, objeto para reemplazar en la plantilla)
+})
+
+
+
+
 
 
 
