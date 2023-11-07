@@ -47,8 +47,12 @@ cartRouter.get('/:cid', (req,res)=>{
 */
 //LIST OF CARTS
 cartRouter.get('/', async (req,res)=>{         //las funciones vinculadas a la BD son asincronicas, por eso el "async"
-    const carts = await cartModel.find();
+/*     const carts = await cartModel.find();
+    res.json({status: "success", payload: carts}); */
+
+    const carts = await cartModel.find({_id:"653943a9988e3c2ecfba01b2"});
     res.json({status: "success", payload: carts});
+
 });
 
 //ADD A CART
@@ -69,10 +73,22 @@ cartRouter.post('/', async (req,res)=>{
 cartRouter.get('/:cid', async (req,res)=>{
     const cartID = req.params.cid;
     const result = await cartModel.findOne({_id: cartID});
-    res.json({status: "success", payload: result.products});
+    const cartName = result.cartName;
+    const listOfProductsFromCart = result.products.map(product => ({     //hago un map porque trae los productos como array
+        title: product.title,
+        description: product.description,
+        thumbnail: product.thumbnail,
+        price: product.price,
+        status: product.status,
+        code: product.code,
+        stock: product.stock,
+        category: product.category
+    }));
+
+    res.render('cart', {listOfProducts:listOfProductsFromCart, cartName: cartName});
 });
 
-//ADD A PRODUCT IN ACART
+//ADD A PRODUCT IN A CART
 cartRouter.post('/:cid', async (req,res)=>{
     let{title, description, thumbnail, price, status, code, stock, category} = req.body;
     if(!title || !description || !thumbnail || !price || !status || !code || !stock || !category){  //si los datos no estan completos, da error
@@ -90,18 +106,66 @@ cartRouter.post('/:cid', async (req,res)=>{
             });
     const cartID = req.params.cid;
     const cartSearched = await cartModel.findOne({_id: cartID});
+    console.log(cartSearched)
     cartSearched.products.push(productToAdd);
     await cartSearched.save();      //debo agregar el "save()" para que los cambios se guarden en la base de datos 
     res.send({status:"success", payload: cartSearched});  //se devuelve el usuario obtenido
     }
 });
 
-//DELETE CART
+
+//DELETE A PRODUCT IN A CART
+cartRouter.delete('/:cid/products/:pid', async (req,res)=>{
+    const cartID = req.params.cid;
+    const productID = req.params.pid;
+    const cartSearched = await cartModel.findOne({_id: cartID});
+    const productUbication = cartSearched.products.findIndex((element) => element._id == productID);
+    if(productUbication == -1){
+        console.log("The product searched was not found in our data base");
+        res.send({status: "error"});
+    } else {
+        const result = cartSearched.products.splice(productUbication,1);
+        await cartSearched.save(); 
+        res.send({status: "success", payload: result});
+    }
+});
+
+
+//UPDATE PRODUCT QUANTITY IN A CART
+cartRouter.put('/:cid/products/:pid', async (req, res) =>{
+    const cartID = req.params.cid;
+    const productID = req.params.pid;
+    let dataToUpdate = req.body;
+    console.log(dataToUpdate);
+    const cartSearched = await cartModel.findOne({_id: cartID});
+    const productUbication = cartSearched.products.findIndex((element) => element._id == productID);
+    if(productUbication == -1){
+        console.log("The product searched was not found in our data base");
+        res.send({status: "error"});
+    } else {
+        cartSearched.products[productUbication].stock = dataToUpdate.stock;
+        console.log (cartSearched.products[productUbication]);
+        await cartSearched.save(); 
+        res.send({status: "success", payload: cartSearched.products[productUbication]});
+    }
+});     //cuando guardo el carrito ya actualizado, no se guarda la actualizacion en la base de datos
+        //aunque el stock del producto si se actualice
+
+//DELETE ALL THE CONTENT FROM A CART
+cartRouter.delete('/:cid', async (req,res)=>{
+    const cartID = req.params.cid;
+    const cartSearched = await cartModel.findOne({_id: cartID});
+    const result = cartSearched.products = [];
+    await cartSearched.save();
+    res.send ({status: "success", payload: result});
+});
+
+/* //DELETE CART
 cartRouter.delete('/:cid', async (req,res)=>{
     const cartID = req.params.cid;
     const result = await cartModel.deleteOne({_id: cartID});
     res.send ({status: "success", payload: result});
-})
+}) */
 /* 
 * END FUNCTIONS WITH MONGOOSE
 */

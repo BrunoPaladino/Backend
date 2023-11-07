@@ -38,13 +38,13 @@
 <script src="/socket.io/socket.io.js" /></script>       {{!-- Los scripts comunican las view con el socket --}}
 <script src="/src/dao/models/carts.model.js"></script>
 <script>
-    const socket = io();
+    //const socket = io();
 
     //ADD PRODUCT LISTENER
     buttonAdd = document.querySelector(".addProduct");
     buttonAdd.addEventListener("click", addProduct);
 
-        //ADD PRODUCT FUNCTION
+    //ADD PRODUCT FUNCTION
     function addProduct(){
         let productIDToAdd = document.getElementById("productTitle").value;
         let productDescriptionToAdd = document.getElementById("productDescription").value;

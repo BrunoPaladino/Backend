@@ -82,6 +82,15 @@ productRouter.get('/:pid', async (req,res)=>{
     res.json({status: "success", payload: result});
 });
 
+//SEARCH PRODUCT BY CATEGORY
+productRouter.get('/:category', async (req,res)=>{
+    const categorySearched = req.params.category;
+    console.log(categorySearched)
+    const result = await productModel.find({category: categorySearched});
+    console.log(result);
+    res.json({status: "success", payload: result});
+});
+
 //ADD PRODUCT
 productRouter.post('/', async (req,res)=>{
     let{title, description, thumbnail, price, status, code, stock, category} = req.body;

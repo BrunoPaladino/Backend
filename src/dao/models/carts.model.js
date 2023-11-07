@@ -14,6 +14,22 @@ const cartSchema = new mongoose.Schema({
     products: [],
 });
 
+
+/* const cartSchema = new mongoose.Schema({
+    cartName: String,
+    products: {
+            type: [
+                    {
+                        product:{
+                            type: mongoose.Schema.Types.ObjectId,
+                            ref : "products"
+                        }
+                    }
+            ],
+            default : []
+        }
+}) */
+
 /* 
 * mongoose.model genera un modelo funcional del cart conectado a la BD.
 * como cuerpo se pasa la coleccion y el esquema (cartCollection, messageSchema)

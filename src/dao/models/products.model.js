@@ -4,6 +4,8 @@
 */
 import mongoose from "mongoose";
 
+import mongoosePaginate from 'mongoose-paginate-v2';
+
 const productCollection = 'products'; //productCollection es la coleccion en la base de datos
 
 /*
@@ -19,6 +21,11 @@ const productSchema = new mongoose.Schema({
     stock: Number,
     category: String
 });
+
+/*
+* Usamos el plugin para trabajar con la paginacion
+*/
+productSchema.plugin(mongoosePaginate);
 
 /* 
 * mongoose.model genera un modelo funcional del producto conectado a la BD.
