@@ -29,8 +29,22 @@ router.get('/', async (req,res)=>{
             sort: {price: sortByPrice},     //ordenamiento de productos por precio
             lean: true    //con esta propiedad del paginado pasamos el contenido en formato json para que el handlebars lo pueda incorporar
         });
-    
-        res.render('home', listOfProducts);  //metodo para renderizar render(nombre de plantilla, objeto para reemplazar en la plantilla)
+        listOfProducts.prevLink=listOfProducts.hasPrevPage? `/?page=${listOfProducts.prevPage}&limit=${limit}`:" "
+        listOfProducts.nextLink=listOfProducts.hasNextPage? `/?page=${listOfProducts.nextPage}&limit=${limit}`:" "
+
+        console.log(listOfProducts.nextPage)
+        res.render('home', listOfProducts/* {
+            status: listOfProducts.status,
+            payload: listOfProducts,
+            totalPages: listOfProducts.totalPages,
+            prevPage: listOfProducts.prevPage,
+            nextPage: listOfProducts.nextPage,
+            page: listOfProducts.page,
+            hasPrevPage: listOfProducts.hasPrevPage,
+            hasNextPage: listOfProducts.hasNextPage,
+            prevLink: listOfProducts.prevLink,
+            netxLink: listOfProducts.netxLink
+            } */);  //metodo para renderizar render(nombre de plantilla, objeto para reemplazar en la plantilla)
     } else {
         const listOfProducts = await productModel.paginate( {} , {
             page,
@@ -38,9 +52,11 @@ router.get('/', async (req,res)=>{
             sort: {price: sortByPrice},
             lean: true
         });
-
+        listOfProducts.prevLink=listOfProducts.hasPrevPage? `/?page=${listOfProducts.prevPage}&limit=${limit}`:" "
+        listOfProducts.nextLink=listOfProducts.hasNextPage? `/?page=${listOfProducts.nextPage}&limit=${limit}`:" "
         res.render('home', listOfProducts);
-}});
+    }
+});
 
 
 //CART

@@ -23,6 +23,14 @@
         <p>
             Page: {{page}}
         </p>
+        <div>
+            {{#if hasPrevPage}}
+            <a href="{{prevLink}}">Previous Page</a>
+            {{/if}}
+            {{#if hasNextPage}}
+            <a href="{{nextLink}}">Next Page</a>
+            {{/if}}
+        </div>
     </div>
 </div>
 
