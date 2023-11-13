@@ -11,24 +11,19 @@ const cartCollection = 'carts'; //cartCollection es la coleccion en la base de d
 */
 const cartSchema = new mongoose.Schema({
     cartName: String,
-    products: [],
-});
-
-
-/* const cartSchema = new mongoose.Schema({
-    cartName: String,
     products: {
             type: [
                     {
-                        product:{
+                        productId:{
                             type: mongoose.Schema.Types.ObjectId,
-                            ref : "products"
-                        }
+                            ref : "products"      //especifica a que coleccion de la base de datos se refiere para usar el populate
+                        },
+                        quantity: Number,
                     }
             ],
             default : []
         }
-}) */
+})
 
 /* 
 * mongoose.model genera un modelo funcional del cart conectado a la BD.

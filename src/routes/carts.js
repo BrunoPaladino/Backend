@@ -72,45 +72,31 @@ cartRouter.post('/', async (req,res)=>{
 //LOOK PRODUCTS IN A CART
 cartRouter.get('/:cid', async (req,res)=>{
     const cartID = req.params.cid;
-    const result = await cartModel.findOne({_id: cartID});
+    const result = await cartModel.findOne({_id: cartID}).populate('products.productId'); //los parametros del populate indican que se debe rellenar el campo "productId" del 
+    console.log(result)                                                                   //array products con la coleccion especificada en el ref (en este caso coleccion products)
     const cartName = result.cartName;
     const listOfProductsFromCart = result.products.map(product => ({     //hago un map porque trae los productos como array
-        title: product.title,
-        description: product.description,
-        thumbnail: product.thumbnail,
-        price: product.price,
-        status: product.status,
-        code: product.code,
-        stock: product.stock,
-        category: product.category
+        title: product.productId.title,
+        description: product.productId.description,
+        thumbnail: product.productId.thumbnail,
+        price: product.productId.price,
+        status: product.productId.status,
+        code: product.productId.code,
+        stock: product.productId.stock,
+        category: product.productId.category
     }));
 
     res.render('cart', {listOfProducts:listOfProductsFromCart, cartName: cartName});
 });
 
 //ADD A PRODUCT IN A CART
-cartRouter.post('/:cid', async (req,res)=>{
-    let{title, description, thumbnail, price, status, code, stock, category} = req.body;
-    if(!title || !description || !thumbnail || !price || !status || !code || !stock || !category){  //si los datos no estan completos, da error
-            return res.send({status:"error", error:"Incomplete values of the product"});
-    } else {
-            let productToAdd = await new productModel({    //lo instancio como modelo (parecido a instanciar como clase) ya que si uso 
-                title,                                     // "productModel.create" se guarda el nuevo producto en la coleccion de "products" tambien
-                description,
-                thumbnail,
-                price,
-                status,
-                code,
-                stock,
-                category
-            });
+cartRouter.post('/:cid/products/:pid', async (req,res)=>{
     const cartID = req.params.cid;
+    const productIDtoAdd = req.params.pid;
     const cartSearched = await cartModel.findOne({_id: cartID});
-    console.log(cartSearched)
-    cartSearched.products.push(productToAdd);
-    await cartSearched.save();      //debo agregar el "save()" para que los cambios se guarden en la base de datos 
-    res.send({status:"success", payload: cartSearched});  //se devuelve el usuario obtenido
-    }
+    cartSearched.products.push({productId : productIDtoAdd});
+    const result = await cartSearched.save();
+    res.send({status:"success", payload: result});
 });
 
 
@@ -119,7 +105,7 @@ cartRouter.delete('/:cid/products/:pid', async (req,res)=>{
     const cartID = req.params.cid;
     const productID = req.params.pid;
     const cartSearched = await cartModel.findOne({_id: cartID});
-    const productUbication = cartSearched.products.findIndex((element) => element._id == productID);
+    const productUbication = cartSearched.products.findIndex((element) => element.productId == productID);
     if(productUbication == -1){
         console.log("The product searched was not found in our data base");
         res.send({status: "error"});
@@ -138,18 +124,17 @@ cartRouter.put('/:cid/products/:pid', async (req, res) =>{
     let dataToUpdate = req.body;
     console.log(dataToUpdate);
     const cartSearched = await cartModel.findOne({_id: cartID});
-    const productUbication = cartSearched.products.findIndex((element) => element._id == productID);
+    const productUbication = cartSearched.products.findIndex((element) => element.productId == productID);
     if(productUbication == -1){
         console.log("The product searched was not found in our data base");
         res.send({status: "error"});
     } else {
-        cartSearched.products[productUbication].stock = dataToUpdate.stock;
+        cartSearched.products[productUbication].quantity = dataToUpdate.quantity;
         console.log (cartSearched.products[productUbication]);
         await cartSearched.save(); 
         res.send({status: "success", payload: cartSearched.products[productUbication]});
     }
-});     //cuando guardo el carrito ya actualizado, no se guarda la actualizacion en la base de datos
-        //aunque el stock del producto si se actualice
+});
 
 //DELETE ALL THE CONTENT FROM A CART
 cartRouter.delete('/:cid', async (req,res)=>{
