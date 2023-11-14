@@ -104,4 +104,30 @@ router.get('/index', (req,res)=>{
     res.render('index', {testUser});  //metodo para renderizar render(nombre de plantilla, objeto para reemplazar en la plantilla)
 });
 
+//RUTAS DE SESSION
+//Inicio de sesion de usuario
+router.get('/login', (req,res)=>{
+    if(req.session?.user){      //si en session encontramos un usuario, redigirimos a profile
+        return res.redirect('/profile')
+    } else {
+        res.render('login',{});
+    }
+})
+
+//Registrar usuario
+router.get('/singup', (req,res)=>{
+    if(req.session?.user){
+        return res.redirect('/profile')
+    } else {
+        res.render('singup',{});
+    }
+})
+
+//Perfil de usuario
+router.get('/profile', (req,res)=>{
+    const user = req.session.user;   //toma los datos del usuario desde la base de datos session
+
+    res.render('profile',{user});
+})
+
 export default router;
