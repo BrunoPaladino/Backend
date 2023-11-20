@@ -18,6 +18,10 @@ import session from 'express-session';
 import MongoStore from 'connect-mongo';
 import sessionRouter from './routes/session.router.js';
 
+import passport from 'passport';
+import initializePassport from './config/passport.config.js';
+
+
 //MONGOOSE link
 //creo una constante para ingresar el link para conectar con Mongo Atlas (DB en internet)
 const url = 'mongodb+srv://BrunoPaladino:E19R9942sGd0IEJw@clusterr2.bxmstih.mongodb.net/';
@@ -45,6 +49,9 @@ app.use(session({
     resave: true,
     saveUninitialized: true,
 }));
+initializePassport();
+app.use(passport.initialize());
+app.use(passport.session());
 
 //WEBSOCKETS
 socketServer.on('connection', (socket) => {     //socketServer.on se usa para escuchar la conexion de un socket nuevo

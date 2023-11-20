@@ -123,6 +123,14 @@ router.get('/singup', (req,res)=>{
     }
 })
 
+
+//Modificar contraseña
+router.get('/changePassword', (req,res)=>{
+
+    res.render('changePassword');
+})
+
+
 //Perfil de usuario
 router.get('/profile', (req,res)=>{
     const user = req.session.user;   //toma los datos del usuario desde la base de datos session

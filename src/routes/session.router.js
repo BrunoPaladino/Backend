@@ -1,34 +1,81 @@
 import express from "express";
 import userModel from "../dao/models/user.model.js";
+import { createHash, isValidPassword } from "../utils.js";
+import passport from "passport";
 
 const sessionRouter= express.Router();
 
-sessionRouter.post('/singup', async (req,res)=>{
+//Crear usuario en la DB
+/* sessionRouter.post('/singup', async (req,res)=>{
     const userInformation = req.body;
     if(userInformation.email === 'adminCoder@coder.com' && userInformation.password === 'adminCod3r123'){
         const rol = {rol: "Administrador"};
+        userInformation.password = createHash(req.body.password);
         const userInformationWithRol = {...userInformation,...rol};
         const user = await userModel.create(userInformationWithRol);
     } else {
         const rol = {rol: "Usuario"};
+        userInformation.password = createHash(req.body.password);
         const userInformationWithRol = {...userInformation,...rol};
         const user = await userModel.create(userInformationWithRol);
     }
     res.redirect('/login');
-});
-
-sessionRouter.post('/login', async(req,res)=>{
-    const {email , password} = req.body;
-    const userLoged = await userModel.findOne({email, password});
-    console.log(userLoged);
-    if(!userLoged){
-        return res.redirect('login', {error: 'The user doesnt exist'});
-    } else {
-        req.session.user = userLoged;
-        res.redirect('/profile');
-    }
+}); */
+sessionRouter.post('/singup', passport.authenticate('register', {failureRedirect: '/failregister'}), async(req, res)=>{
+    res.redirect('/login');
+})
+sessionRouter.get('/failregister', async(req, res)=>{
+    console.log("Failed Strategy");
+    res.send({error: "Failed"});
 })
 
+//Iniciar sesion de usuario cargado en la DB
+/* sessionRouter.post('/login', async(req,res)=>{
+    const {email , password} = req.body;
+    const userLoged = await userModel.findOne({email});
+    console.log(userLoged);
+    if(!userLoged){
+        return res.redirect('login', {error: 'The user doesnt exist in our data base'});
+    }
+    if(!isValidPassword(userLoged, password)){
+        return res.status(403).send({status: 'error', error: 'Incorrect password'});
+    }
+    req.session.user = userLoged;
+    res.redirect('/profile');
+}) */
+sessionRouter.post('/login', passport.authenticate('login', {failureRedirect: '/faillogin'}), async(req, res)=>{
+    if(!req.user){
+        return res.status(400).send({status:"error", error:"The user doesnt exist in our data base"})
+    }
+    req.session.user = {
+        firstName : req.user.firstName,
+        lastName : req.user.lastName,
+        email: req.user.email
+    }
+    res.redirect('/profile');
+    /* res.send({status: "success", payload: req.user}); */
+});
+
+sessionRouter.get('/faillogin', async(req, res)=>{
+    console.log("Failed Strategy");
+    res.send({error: "Failed Login"});
+})
+
+//Restaurar contraseña de usuario
+sessionRouter.post('/changePassword', async(req,res)=>{
+    const {email , password} = req.body;
+    const userToModify = await userModel.findOne({email});
+    console.log(userToModify);
+    if(userToModify == null){
+        console.log('The user doesnt exist in our data base');
+        return res.redirect('/login');
+    }
+    userToModify.password = createHash(password);
+    req.session.user = userToModify;
+    res.redirect('/profile');
+})
+
+//Cerrar sesion de usuario
 sessionRouter.get('/logout', async (req,res)=>{
     req.session.destroy( error =>{
         if(error){
