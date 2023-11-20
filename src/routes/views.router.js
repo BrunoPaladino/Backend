@@ -108,7 +108,7 @@ router.get('/index', (req,res)=>{
 //Inicio de sesion de usuario
 router.get('/login', (req,res)=>{
     if(req.session?.user){      //si en session encontramos un usuario, redigirimos a profile
-        return res.redirect('/profile')
+        return res.redirect('/')
     } else {
         res.render('login',{});
     }
@@ -128,6 +128,14 @@ router.get('/profile', (req,res)=>{
     const user = req.session.user;   //toma los datos del usuario desde la base de datos session
 
     res.render('profile',{user});
+})
+
+
+//Saludo del usuario logeado
+router.get('/', (req,res)=>{
+    const user = req.session.user;   //toma los datos del usuario desde la base de datos session
+
+    res.render('home',{user});
 })
 
 export default router;

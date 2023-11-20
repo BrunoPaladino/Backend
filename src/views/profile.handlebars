@@ -3,10 +3,14 @@
     <div>
         <h2>Profile User</h1>
         <div>
-            <h3>First Name: {{firstName}}</h2>
-            <h3>Last Name: {{lastName}}</h2>
-            <h3>Email: {{email}}</h2>
-            {{!-- <h3>Rol: {{rol}}</h2> --}}
+            <h3>First Name: {{user.firstName}}</h2>
+            <h3>Last Name: {{user.lastName}}</h2>
+            <h3>Email: {{user.email}}</h2>
         </div>
     </div>
 </div>
+
+<a href="/api/session/logout">Logout</a>
+
+<script src="/socket.io/socket.io.js" /></script>       {{!-- Los scripts comunican las view con el socket --}}
+<script src="/js/index.js" /></script>  {{!-- Con esta importacion, traigo el contenido del archivo index.js --}}

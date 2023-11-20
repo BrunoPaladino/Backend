@@ -15,8 +15,8 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String,
     },
-    password: String
-/*     rol: String */
+    password: String,
+    rol: String
 });
 
 /* 

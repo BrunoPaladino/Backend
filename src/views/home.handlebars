@@ -1,4 +1,13 @@
 <div>
+    {{user}}
+
+
+    {{#if user}}
+    <div>
+        <h2>Welcome {{user.firstName}}</h2>
+    </div>
+    {{/if}}
+
     {{#each docs}}      {{!-- uso "docs" ya que al pasar el paginado los productos estan en un array "docs" --}}
     <div>
         <h2>Title: {{this.title}}</h2>
