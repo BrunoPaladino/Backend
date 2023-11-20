@@ -6,6 +6,8 @@ import http from 'http';
 import productModel from "../dao/models/products.model.js";
 import cartModel from "../dao/models/carts.model.js";
 
+import passport from "passport";
+
 const productManager = new ProductManager();
 const router = express.Router();
 
@@ -145,5 +147,37 @@ router.get('/', (req,res)=>{
 
     res.render('home',{user});
 })
+
+
+//Ingresar con usuario de Github
+router.get(
+    '/login-github',
+    passport.authenticate('github', {scope: ['user:email']}),
+    async(req,res) => {}
+)
+
+router.get(
+    '/githubcallback',
+    passport.authenticate('github', {failureRedirect: '/'}),
+    async(req,res) => {
+        console.log('Callback: ', req.user);
+        req.session.user = req.user;
+
+        console.log(req.session);
+        res.redirect('/');
+    })
+
+function auth(req, res, next){
+    if(req.session?.user){
+        next();
+    }
+    return res.status(401).send('Auth error');
+}
+
+router.get('/private', (req,res)=>{
+    res.json(req.session.user);
+});
+
+
 
 export default router;

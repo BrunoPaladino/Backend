@@ -94,4 +94,33 @@ sessionRouter.get('/', (req,res)=>{
     res.render('home',{user});
 })
 
+//Ingresar con usuario de Github
+sessionRouter.get(
+    '/login-github',
+    passport.authenticate('github', {scope: ['user:email']}),
+    async(req,res) => {}
+)
+
+sessionRouter.get(
+    '/githubcallback',
+    passport.authenticate('github', {failureRedirect: '/'}),
+    async(req,res) => {
+        console.log('Callback: ', req.user);
+        req.session.user = req.user;
+
+        console.log(req.session);
+        res.redirect('/');
+    })
+
+function auth(req, res, next){
+    if(req.session?.user){
+        next();
+    }
+    return res.status(401).send('Auth error');
+}
+
+sessionRouter.get('/private', (req,res)=>{
+    res.json(req.session.user);
+});
+
 export default sessionRouter;
