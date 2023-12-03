@@ -50,7 +50,8 @@ sessionRouter.post('/login', passport.authenticate('login', {failureRedirect: '/
     req.session.user = {
         firstName : req.user.firstName,
         lastName : req.user.lastName,
-        email: req.user.email
+        email: req.user.email,
+        age: req.user.age
     }
     res.redirect('/profile');
     /* res.send({status: "success", payload: req.user}); */

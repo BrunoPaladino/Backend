@@ -16,8 +16,15 @@ const userSchema = new mongoose.Schema({
         type: String,
         unique: true
     },
+    age: Number,
     password: String,
-    rol: String
+    rol: String,
+
+    //referencia al carrito del usuario
+    cart: {
+        type: mongoose.Schema.Types.ObjectId,       //en el campo cart se aplicara un identificador unico (ID) generado por Mongo y que refiere a documentos en otra coleccion
+        ref: 'carts'                            //se aclara a que coleccion se hace referencia para aplicar el ID generado por Mongo
+    }
 });
 
 /* 

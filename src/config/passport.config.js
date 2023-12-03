@@ -4,6 +4,7 @@ import userModel from "../dao/models/user.model.js";
 import { createHash, isValidPassword } from "../utils.js";
 
 import GitHubStrategy from 'passport-github2';
+import cartModel from "../dao/models/carts.model.js";
 
 const LocalStrategy = local.Strategy;
 
@@ -16,22 +17,32 @@ const initializePassport = () =>{
     }, async(req, username, password, done) => {        //done es el callback de como resolver el passport, el prier argumento es el error y el segundo el resultado
         const userInformation = req.body;
         let email = userInformation.email
+        
         try{
             const user = await userModel.findOne({email: username});
             if (user){
                 console.log('User already exists');
                 return done (null, false);
             }
+
+            //Crea un carrito nuevo para el usuario creado
+            const newCart = await cartModel.create({
+                cartName: `Cart for: ${userInformation.firstname}`,         //en la DB no guarda el nombre del usuario, da undefined
+                products: []
+            })
+
             if(userInformation.email === 'adminCoder@coder.com' && userInformation.password === 'adminCod3r123'){
                 const rol = {rol: "Administrador"};
                 userInformation.password = createHash(req.body.password);
                 const userInformationWithRol = {...userInformation,...rol};
+                userInformationWithRol.cart = newCart._id;                  //asigno a la propiedad cart, del esquema de usuario, el carrito creado
                 const user = await userModel.create(userInformationWithRol);
                 return done (null, user);
             } else {
                 const rol = {rol: "Usuario"};
                 userInformation.password = createHash(req.body.password);
                 const userInformationWithRol = {...userInformation,...rol};
+                userInformationWithRol.cart = newCart._id;                  //asigno a la propiedad cart, del esquema de usuario, el carrito creado
                 const user = await userModel.create(userInformationWithRol);
                 return done (null, user);
             }
@@ -75,6 +86,7 @@ const initializePassport = () =>{
                 const newUser = {
                     firstName: profile._json.name,
                     lastName: '',
+                    age: '',
                     email: profile._json.email,
                     password: ''
                 }
