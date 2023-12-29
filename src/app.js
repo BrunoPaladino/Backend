@@ -21,6 +21,15 @@ import sessionRouter from './routes/session.router.js';
 import passport from 'passport';
 import initializePassport from './config/passport.config.js';
 
+import dotenv from 'dotenv';
+
+//Configuracion de variables de ambiente (pasadas por .env)
+dotenv.config({path: '../.env'})
+const PORT = process.env.PORT;
+const MONGO_URL = process.env.MONGO_URL;
+const MONGO_DBNAME = process.env.MONGO_DBNAME;
+
+/* import PORT from '../config.js'; */          //si intento importar las variables desde config, me da undefined
 
 //MONGOOSE link
 //creo una constante para ingresar el link para conectar con Mongo Atlas (DB en internet)
@@ -41,8 +50,8 @@ app.use(express.urlencoded({extended:true}));
 //Configuracion Session(debe ser configurado antes que las rutas que dependen de el)
 app.use(session({
     store: MongoStore.create({
-        mongoUrl: url,
-        dbName: 'ecommerce',
+        mongoUrl: MONGO_URL,
+        dbName: MONGO_DBNAME,
         ttl: 100
     }),
     secret: 'secret',
@@ -105,11 +114,11 @@ app.use('/',viewsRouter);
 
 //Ecommerce Data Base (MONGOOSE)
 //la conexion de mongoose funciona como una promesa
-mongoose.connect(url, {dbName: 'ecommerce'})                    //el segundo parametro especifica la Base de Datos a vincular
+mongoose.connect(MONGO_URL, {dbName: MONGO_DBNAME})                    //el segundo parametro especifica la Base de Datos a vincular
 .then(() => {                                                   // la coleccion ya la definimos en el modelo(esquema)
     console.log("Database ecommerce connected");
-    server.listen (8080, () =>  //ACTIVACION DE SERVER, si en el lugar de "server" pusiera "app" no funcionaria el socket, sino que lo tomaria el server de express
-    {console.log("Server 8080 activated, with socket")
+    server.listen (PORT, () =>  //ACTIVACION DE SERVER, si en el lugar de "server" pusiera "app" no funcionaria el socket, sino que lo tomaria el server de express
+    {console.log(`Server ${PORT} activated, with socket. `)
     });
 })
     .catch ((error) => {
