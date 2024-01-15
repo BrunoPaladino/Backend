@@ -1,8 +1,22 @@
 import express from 'express';
-import userModel from '../dao/models/user.model.js';
+import userModel from '../dao/mongo/models/user.model.js';
+
+import { getUsers, getUserById, saveUser } from '../controllers/user.controller.js';
 
 const usersRouter = express.Router();
 
+
+//Rutas usando factory
+usersRouter.get('/', getUsers);
+usersRouter.get('/:uid', getUserById);
+usersRouter.post('/', saveUser);
+
+
+
+/* 
+* FUNCTIONS WITH MONGOOSE 
+*/
+/* 
 //LIST OF USERS
 usersRouter.get('/', async (req,res)=>{         //las funciones vinculadas a la BD son asincronicas, por eso el "async"
         const users = await userModel.find();
@@ -45,5 +59,6 @@ usersRouter.delete('/:uid', async (req,res)=>{
         const result = await userModel.deleteOne({_id: userID});
         res.send ({status: "success", payload: result});
 })
+ */
 
 export default usersRouter;

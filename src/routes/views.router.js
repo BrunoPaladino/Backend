@@ -3,8 +3,8 @@ import ProductManager from "../dao/ProductManager.js";
 
 import { Server } from "socket.io";
 import http from 'http';
-import productModel from "../dao/models/products.model.js";
-import cartModel from "../dao/models/carts.model.js";
+import productModel from "../dao/mongo/models/products.model.js";
+import cartModel from "../dao/mongo/models/carts.model.js";
 
 import passport from "passport";
 

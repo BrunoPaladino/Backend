@@ -1,6 +1,8 @@
 import express from 'express';
 import ProductManager from '../dao/ProductManager.js';
-import productModel from '../dao/models/products.model.js';     //importo el modelo de producto de MongoDB
+import productModel from '../dao/mongo/models/products.model.js';     //importo el modelo de producto de MongoDB
+
+import { addProduct, addStore, getStoreById, getStores } from '../controllers/store.controllers.js';
 
 const productRouter = express.Router();
 const productManager = new ProductManager(); 
@@ -65,10 +67,19 @@ productRouter.delete('/:pid', (req,res)=>{
 */
 
 
+/* 
+* FUNCTIONS WITH FACTORY
+*/
+productRouter.get('/', getStores);
+productRouter.get('/:pid', getStoreById);
+productRouter.post('/', addStore);
+productRouter.post('/:pid/product', addProduct);
+
 
 /* 
 * FUNCTIONS WITH MONGOOSE 
 */
+/* 
 //LIST OF PRODUCTS
 productRouter.get('/', async (req,res)=>{         //las funciones vinculadas a la BD son asincronicas, por eso el "async"
     const products = await productModel.find();
@@ -124,7 +135,8 @@ productRouter.delete('/:pid', async (req,res)=>{
     const productID = req.params.pid;
     const result = await productModel.deleteOne({_id: productID});
     res.send ({status: "success", payload: result});
-})
+}) 
+*/
 /* 
 * END FUNCTIONS WITH MONGOOSE
 */

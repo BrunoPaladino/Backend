@@ -11,6 +11,8 @@ const cartCollection = 'carts'; //cartCollection es la coleccion en la base de d
 */
 const cartSchema = new mongoose.Schema({
     cartName: String,
+    status: String,
+    TotalPrice: Number,
     products: {
             type: [
                     {
@@ -27,7 +29,7 @@ const cartSchema = new mongoose.Schema({
 
 /* 
 * mongoose.model genera un modelo funcional del cart conectado a la BD.
-* como cuerpo se pasa la coleccion y el esquema (cartCollection, messageSchema)
+* como cuerpo se pasa la coleccion y el esquema (cartCollection, cartSchema)
 */
 const cartModel = mongoose.model(cartCollection, cartSchema);
 

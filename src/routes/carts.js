@@ -1,8 +1,9 @@
 import express from 'express';
 import CartManager from '../dao/CartManager.js';
 const cartRouter = express.Router();
-import cartModel from '../dao/models/carts.model.js';
-import productModel from '../dao/models/products.model.js';
+import cartModel from '../dao/mongo/models/carts.model.js';
+import productModel from '../dao/mongo/models/products.model.js';
+import { createCart, getCartById, getCarts, resolveCart } from '../controllers/cart.controller.js';
 
 const cartManager = new CartManager();
 
@@ -39,17 +40,23 @@ cartRouter.get('/:cid', (req,res)=>{
 */
 
 
+/* 
+* FUNCTIONS WITH FACTORY
+*/
+cartRouter.get('/', getCarts )
+cartRouter.get('/:cid', getCartById)
+cartRouter.post('/', createCart)
+cartRouter.post('/:cid', resolveCart);
+
 
 
 
 /* 
 * FUNCTIONS WITH MONGOOSE 
 */
+/* 
 //LIST OF CARTS
 cartRouter.get('/', async (req,res)=>{         //las funciones vinculadas a la BD son asincronicas, por eso el "async"
-/*     const carts = await cartModel.find();
-    res.json({status: "success", payload: carts}); */
-
     const carts = await cartModel.find({_id:"653943a9988e3c2ecfba01b2"});
     res.json({status: "success", payload: carts});
 
@@ -144,6 +151,8 @@ cartRouter.delete('/:cid', async (req,res)=>{
     await cartSearched.save();
     res.send ({status: "success", payload: result});
 });
+*/
+
 
 /* //DELETE CART
 cartRouter.delete('/:cid', async (req,res)=>{
@@ -154,5 +163,7 @@ cartRouter.delete('/:cid', async (req,res)=>{
 /* 
 * END FUNCTIONS WITH MONGOOSE
 */
+
+
 
 export default cartRouter;

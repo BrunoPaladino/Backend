@@ -11,8 +11,8 @@ import ProductManager from './dao/ProductManager.js';
 import usersRouter from './routes/users.router.js';
 import mongoose from 'mongoose';
 
-import messageModel from './dao/models/messages.model.js'
-import cartModel from './dao/models/carts.model.js'
+import messageModel from './dao/mongo/models/messages.model.js'
+import cartModel from './dao/mongo/models/carts.model.js'
 
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
@@ -22,18 +22,16 @@ import passport from 'passport';
 import initializePassport from './config/passport.config.js';
 
 import dotenv from 'dotenv';
+import config from './config/config.js';
 
-//Configuracion de variables de ambiente (pasadas por .env)
+/* //Configuracion de variables de ambiente (pasadas por .env)
 dotenv.config({path: '../.env'})
+const PERSISTENCE = process.env.PERSISTENCE;
 const PORT = process.env.PORT;
-const MONGO_URL = process.env.MONGO_URL;
-const MONGO_DBNAME = process.env.MONGO_DBNAME;
+const MONGO_URL = process.env.MONGO_URL;            //MONGOOSE link, constante para ingresar el link para conectar con Mongo Atlas (DB en internet)
+const MONGO_DBNAME = process.env.MONGO_DBNAME; */
 
 /* import PORT from '../config.js'; */          //si intento importar las variables desde config, me da undefined
-
-//MONGOOSE link
-//creo una constante para ingresar el link para conectar con Mongo Atlas (DB en internet)
-const url = 'mongodb+srv://BrunoPaladino:E19R9942sGd0IEJw@clusterr2.bxmstih.mongodb.net/';
 
 const app = express();
 const server = http.createServer(app);
@@ -50,8 +48,8 @@ app.use(express.urlencoded({extended:true}));
 //Configuracion Session(debe ser configurado antes que las rutas que dependen de el)
 app.use(session({
     store: MongoStore.create({
-        mongoUrl: MONGO_URL,
-        dbName: MONGO_DBNAME,
+        mongoUrl: config.MONGO_URL,
+        dbName: config.MONGO_DBNAME,
         ttl: 100
     }),
     secret: 'secret',
@@ -114,11 +112,11 @@ app.use('/',viewsRouter);
 
 //Ecommerce Data Base (MONGOOSE)
 //la conexion de mongoose funciona como una promesa
-mongoose.connect(MONGO_URL, {dbName: MONGO_DBNAME})                    //el segundo parametro especifica la Base de Datos a vincular
+mongoose.connect(config.MONGO_URL, {dbName: config.MONGO_DBNAME})                    //el segundo parametro especifica la Base de Datos a vincular
 .then(() => {                                                   // la coleccion ya la definimos en el modelo(esquema)
     console.log("Database ecommerce connected");
-    server.listen (PORT, () =>  //ACTIVACION DE SERVER, si en el lugar de "server" pusiera "app" no funcionaria el socket, sino que lo tomaria el server de express
-    {console.log(`Server ${PORT} activated, with socket. `)
+    server.listen (config.PORT, () =>  //ACTIVACION DE SERVER, si en el lugar de "server" pusiera "app" no funcionaria el socket, sino que lo tomaria el server de express
+    {console.log(`Server ${config.PORT} activated, with socket. `)
     });
 })
     .catch ((error) => {
