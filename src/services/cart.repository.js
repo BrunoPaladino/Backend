@@ -9,7 +9,7 @@ export default class CartRepository{
     }
 
     getCartById = async (cid) => {
-        return await this.dao.getCartById(oid)
+        return await this.dao.getCartById(cid)
     }
 
     createCart = async (cart) => {

@@ -22,16 +22,9 @@ import passport from 'passport';
 import initializePassport from './config/passport.config.js';
 
 import dotenv from 'dotenv';
-import config from './config/config.js';
-
-/* //Configuracion de variables de ambiente (pasadas por .env)
-dotenv.config({path: '../.env'})
-const PERSISTENCE = process.env.PERSISTENCE;
-const PORT = process.env.PORT;
-const MONGO_URL = process.env.MONGO_URL;            //MONGOOSE link, constante para ingresar el link para conectar con Mongo Atlas (DB en internet)
-const MONGO_DBNAME = process.env.MONGO_DBNAME; */
-
-/* import PORT from '../config.js'; */          //si intento importar las variables desde config, me da undefined
+import config from './config/config.js';            //config es la configuracion de las variables de ambiente (pasadas por .env)
+import productModel from './dao/mongo/models/products.model.js';
+import userModel from './dao/mongo/models/user.model.js';
 
 const app = express();
 const server = http.createServer(app);
@@ -71,6 +64,15 @@ socketServer.on('connection', (socket) => {     //socketServer.on se usa para es
         const listOfCarts = await cartModel.findOne();
         listOfCarts.products.push(newProduct);
         await listOfCarts.save();
+    })
+    socket.on('addProductToCart', async (productIDToAdd)=>{
+        //const userLogged = await userModel.findOne({ _id: userId });
+        const productToAdd = await productModel.findById(productIDToAdd);
+        //console.log(userLogged)
+        console.log(productToAdd);
+        
+/*         listOfCarts.products.push(newProduct);
+        await listOfCarts.save(); */
     })
     socket.on('removeProduct', (productID)=>{    //socket.on espera la ocurrencia del evento "removeProduct" (desde el lado del cliente) y un producto, para activarse
         productManager.deleteProduct(productID);

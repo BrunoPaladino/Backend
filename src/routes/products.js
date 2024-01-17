@@ -74,6 +74,9 @@ productRouter.get('/', getStores);
 productRouter.get('/:pid', getStoreById);
 productRouter.post('/', addStore);
 productRouter.post('/:pid/product', addProduct);
+/* 
+* END FUNCTIONS WITH FACTORY
+ */
 
 
 /* 
@@ -136,7 +139,7 @@ productRouter.delete('/:pid', async (req,res)=>{
     const result = await productModel.deleteOne({_id: productID});
     res.send ({status: "success", payload: result});
 }) 
-*/
+ */
 /* 
 * END FUNCTIONS WITH MONGOOSE
 */

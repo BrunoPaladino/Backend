@@ -47,7 +47,9 @@ cartRouter.get('/', getCarts )
 cartRouter.get('/:cid', getCartById)
 cartRouter.post('/', createCart)
 cartRouter.post('/:cid', resolveCart);
-
+/* 
+*  END FUNCTIONS WITH FACTORY
+*/
 
 
 

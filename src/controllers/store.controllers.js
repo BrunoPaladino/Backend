@@ -6,7 +6,8 @@ export const getStores = async (req, res) => {
 }
 
 export const getStoreById = async (req, res) => {
-    const id = req.params;
+    const id = req.params.pid;
+    console.log(id)
     const result = await StoreService.getStoreById(id)
     res.json({status: 'success', payload: result})
 }

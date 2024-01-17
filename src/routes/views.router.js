@@ -5,6 +5,7 @@ import { Server } from "socket.io";
 import http from 'http';
 import productModel from "../dao/mongo/models/products.model.js";
 import cartModel from "../dao/mongo/models/carts.model.js";
+import userModel from "../dao/mongo/models/user.model.js";
 
 import passport from "passport";
 
@@ -23,7 +24,7 @@ router.get('/', async (req,res)=>{
     const categorySearched = req.query.category;      //busqueda por categoria
     //Ordenamiento por precio, si el query es "asc" ordena ascendente, si es "desc" ordena descendente, y si no se da un query sort no ordena
     const sortByPrice = req.query.sort === 'asc' ? 1 : req.query.sort === 'desc' ? -1 : undefined; 
-
+    const user = req.session.user                   //toma los datos del usuario desde la base de datos session
     if(categorySearched){
         const listOfProducts = await productModel.paginate( {category: categorySearched} , {      //trae todos los productos y el esquema
             page,
@@ -35,7 +36,7 @@ router.get('/', async (req,res)=>{
         listOfProducts.nextLink=listOfProducts.hasNextPage? `/?page=${listOfProducts.nextPage}&limit=${limit}`:" "
 
         console.log(listOfProducts.nextPage)
-        res.render('home', listOfProducts/* {
+        res.render('home', { listOfProducts: listOfProducts.docs,user }/* {
             status: listOfProducts.status,
             payload: listOfProducts,
             totalPages: listOfProducts.totalPages,
@@ -56,27 +57,36 @@ router.get('/', async (req,res)=>{
         });
         listOfProducts.prevLink=listOfProducts.hasPrevPage? `/?page=${listOfProducts.prevPage}&limit=${limit}`:" "
         listOfProducts.nextLink=listOfProducts.hasNextPage? `/?page=${listOfProducts.nextPage}&limit=${limit}`:" "
-        res.render('home', listOfProducts);
+        res.render('home', { listOfProducts: listOfProducts.docs,user });       //al hacer el paginado los productos se guardan en un array "docs", por eso pasamos asi la lista de productos
     }
 });
 
 
 //CART
 router.get('/cart', async (req,res)=>{
-    const listOfCarts = await cartModel.findOne();       //trae todos los carts con el esquema
-    const cartName = listOfCarts.cartName;
-    const listOfProductsFromCart = listOfCarts.products.map(product => ({     //hago un map porque trae los productos como array
-        title: product.title,
-        description: product.description,
-        thumbnail: product.thumbnail,
-        price: product.price,
-        status: product.status,
-        code: product.code,
-        stock: product.stock,
-        category: product.category
-    }));
-
-    res.render('cart', {listOfProducts:listOfProductsFromCart, cartName: cartName});  //metodo para renderizar render(nombre de plantilla, objeto para reemplazar en la plantilla)
+    const user = req.session.user
+    const userCart = await userModel.findOne({ email: user.email }).populate('cart');   //usamos "populate" para rellenar en el campo "cart" con los productos que corresponden al cart de Mongo que tenga la id correspondiente
+    if(userCart){
+        const cartName= userCart.cart.cartName;
+        const listOfProducts = await Promise.all(               //el Promise.all espera a que se aplique a todos los productos del array el map y genera un array nuevo "listOfProducts"
+            userCart.cart.products.map(async (product) => {     //hago un map sobre cada producto del array del usuario para obtener los datos
+                const productDetails = await productModel.findById(product.productId);
+                return {
+                    title: productDetails.title,
+                    description: productDetails.description,
+                    thumbnail: productDetails.thumbnail,
+                    price: productDetails.price,
+                    status: productDetails.status,
+                    code: productDetails.code,
+                    stock: productDetails.stock,
+                    category: productDetails.category
+                };
+            })
+        );
+        res.render('cart', {listOfProducts:listOfProducts, cartName: cartName, user});  //metodo para renderizar render(nombre de plantilla, objeto para reemplazar en la plantilla)
+    } else {
+        res.render('cart',{user})
+    }
 });
 
 
@@ -110,7 +120,7 @@ router.get('/index', (req,res)=>{
 //Inicio de sesion de usuario
 router.get('/login', (req,res)=>{
     if(req.session?.user){      //si en session encontramos un usuario, redigirimos a profile
-        return res.redirect('/')
+        return res.redirect('/profile')
     } else {
         res.render('login',{});
     }
@@ -138,14 +148,6 @@ router.get('/profile', (req,res)=>{
     const user = req.session.user;   //toma los datos del usuario desde la base de datos session
 
     res.render('profile',{user});
-})
-
-
-//Saludo del usuario logeado
-router.get('/', (req,res)=>{
-    const user = req.session.user;   //toma los datos del usuario desde la base de datos session
-
-    res.render('home',{user});
 })
 
 

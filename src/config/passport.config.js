@@ -14,7 +14,7 @@ const initializePassport = () =>{
     passport.use ('register', new LocalStrategy({
         passReqToCallback: true,
         usernameField: 'email'                          //determinamos el email como el username
-    }, async(req, username, password, done) => {        //done es el callback de como resolver el passport, el prier argumento es el error y el segundo el resultado
+    }, async(req, username, password, done) => {        //done es el callback de como resolver el passport, el primer argumento es el error y el segundo el resultado
         const userInformation = req.body;
         let email = userInformation.email
         
@@ -52,7 +52,7 @@ const initializePassport = () =>{
     }));
 
 
-    //Registro de usuario en BD con Passport
+    //Inicio de sesion de usuario en BD con Passport
     passport.use('login', new LocalStrategy({usernameField:'email'}, async(username,password,done)=>{
         try{
             const user = await userModel.findOne({email: username});

@@ -21,7 +21,7 @@ const sessionRouter= express.Router();
     }
     res.redirect('/login');
 }); */
-sessionRouter.post('/singup', passport.authenticate('register', {failureRedirect: '/failregister'}), async(req, res)=>{
+sessionRouter.post('/singup', passport.authenticate('register', {failureRedirect: '/failregister'}), async(req, res)=>{         //para la autenticacion usa un metodo personalizado "register"
     res.redirect('/login');
 })
 sessionRouter.get('/failregister', async(req, res)=>{
@@ -43,7 +43,7 @@ sessionRouter.get('/failregister', async(req, res)=>{
     req.session.user = userLoged;
     res.redirect('/profile');
 }) */
-sessionRouter.post('/login', passport.authenticate('login', {failureRedirect: '/faillogin'}), async(req, res)=>{
+sessionRouter.post('/login', passport.authenticate('login', {failureRedirect: '/faillogin'}), async(req, res)=>{    //para la autenticacion usa un metodo personalizado "login"
     if(!req.user){
         return res.status(400).send({status:"error", error:"The user doesnt exist in our data base"})
     }
@@ -51,7 +51,8 @@ sessionRouter.post('/login', passport.authenticate('login', {failureRedirect: '/
         firstName : req.user.firstName,
         lastName : req.user.lastName,
         email: req.user.email,
-        age: req.user.age
+        age: req.user.age,
+        rol: req.user.rol
     }
     res.redirect('/profile');
     /* res.send({status: "success", payload: req.user}); */

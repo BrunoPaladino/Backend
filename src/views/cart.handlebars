@@ -20,11 +20,21 @@
     </div>
 
 <div>
-    <h2>Cart: {{this.cartName}}</h2>
+    {{#if user}}
+    <div>
+        <h2>Here we have your order {{user.firstName}}</h2>
+    </div>
+        {{else}}
+        <div>
+            <h2>Your order is empty {{user.firstName}}</h2>
+        </div>
+    {{/if}}
+
+    <h2>{{this.cartName}}</h2>
     {{#each listOfProducts}}
     <div>
         <h3>Title: {{this.title}}</h3>
-        <p>Description {{this.description}}</p>
+        <p>Description: {{this.description}}</p>
         <p>Images: {{this.thumbnail}}</p>
         <p>Price: {{this.price}}</p>
         <p>Status: {{this.status}}</p>

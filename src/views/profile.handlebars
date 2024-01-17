@@ -1,4 +1,5 @@
 <div>
+    {{#if user}}
     <h1>Welcome user!</h1>
     <div>
         <h2>Profile User</h1>
@@ -7,8 +8,13 @@
             <h3>Last Name: {{user.lastName}}</h3>
             <h3>Email: {{user.email}}</h3>
             <h3>Age: {{user.age}}</h3>
+            <h3>Rol: {{user.rol}}</h3>
         </div>
     </div>
+    {{else}}
+    <h1>Welcome visitor!</h1>
+    <h2>You are not logged in our websyte, please do it to know you better</h2>
+    {{/if}}
 </div>
 
 <a href="/api/session/logout">Logout</a>

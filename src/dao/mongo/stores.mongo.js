@@ -1,12 +1,13 @@
+import productModel from "./models/products.model.js"
 import storeModel from "./models/stores.model.js"
 
 export default class Store{
     getStores = async () =>{
-        return await storeModel.find()
+        return await productModel.find()        //pongo el esquema de producto, porque los productos no estan dentro de stores
     }
 
     getStoreById = async (id) => {
-        return await storeModel.findById(id)
+        return await productModel.findOne({_id: id})
     }
 
     saveStore = async (store) => {
