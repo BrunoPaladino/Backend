@@ -65,11 +65,19 @@ socketServer.on('connection', (socket) => {     //socketServer.on se usa para es
         listOfCarts.products.push(newProduct);
         await listOfCarts.save();
     })
-    socket.on('addProductToCart', async (productIDToAdd)=>{
-        //const userLogged = await userModel.findOne({ _id: userId });
-        const productToAdd = await productModel.findById(productIDToAdd);
+    socket.on('addProductToCart', async (productIDToAdd, userLoggedEmail)=>{
+        console.log(userLoggedEmail)
+        const userLogged = await userModel.findOne({ email: userLoggedEmail});
+        if (userLogged) {
+            const productToAdd = await productModel.findById(productIDToAdd);
+            console.log(productToAdd);
+            // Puedes continuar con la lógica de añadir el producto al carrito del usuario
+        } else {
+            console.log("User not found");
+        }
+        //const productToAdd = await productModel.findById(productIDToAdd);
         //console.log(userLogged)
-        console.log(productToAdd);
+        //console.log(productToAdd);
         
 /*         listOfCarts.products.push(newProduct);
         await listOfCarts.save(); */

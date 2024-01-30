@@ -3,7 +3,7 @@
     {{#if user}}
     <div>
         <h2>Welcome {{user.firstName}}</h2>
-        <button id="userIdButton" style="display: none;" userId="{{user._id}}"></button>
+        <button id="userEmailButton" style="display: none;" data-userEmail="{{user.email}}"></button>
     </div>
     {{/if}}
 
@@ -53,18 +53,18 @@
     buttonsAddToCart.forEach((button) => {
         button.addEventListener("click", function(){
             const productIDToAdd = button.getAttribute('productId')
-            const userIdButton = document.querySelector('#userIdButton')
-            userLoggedId = userIdButton.getAttribute('userId')
-            console.log("User ID:", userLoggedId)
-            addProductToCart(productIDToAdd)
+            const userEmailButton = document.querySelector('#userEmailButton')
+            userLoggedEmail = userEmailButton.getAttribute('data-userEmail')
+            console.log("User Email:", userLoggedEmail)
+            addProductToCart(productIDToAdd, userLoggedEmail)
         });
     })
     
 
     //ADD PRODUCT TO CART FUNCTION
-    function addProductToCart(productIDToAdd){
+    function addProductToCart(productIDToAdd, userLoggedEmail){
         console.log("click")
         console.log(productIDToAdd)
-        socket.emit('addProductToCart', productIDToAdd);
+        socket.emit('addProductToCart', {productIDToAdd,userLoggedEmail});
     }
 </script>
