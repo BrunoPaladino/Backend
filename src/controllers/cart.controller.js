@@ -24,3 +24,11 @@ export const resolveCart = async (req, res) => {
     const result = await CartService.resolveCart(id, resolve);
     res.send({status: 'success', payload: result})
 }
+
+export const completePurchase = async (req, res) => {
+    const resolve = req.query;
+    const id = req.params;
+
+    const result = await CartService.resolveCart(id, resolve);
+    res.send({status: 'success', payload: result})
+}
