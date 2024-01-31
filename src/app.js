@@ -66,21 +66,23 @@ socketServer.on('connection', (socket) => {     //socketServer.on se usa para es
         await listOfCarts.save();
     })
     socket.on('addProductToCart', async (productIDToAdd, userLoggedEmail)=>{
-        console.log(userLoggedEmail)
         const userLogged = await userModel.findOne({ email: userLoggedEmail});
         if (userLogged) {
-            const productToAdd = await productModel.findById(productIDToAdd);
-            console.log(productToAdd);
-            // Puedes continuar con la lógica de añadir el producto al carrito del usuario
+            console.log(userLogged)
         } else {
             console.log("User not found");
         }
-        //const productToAdd = await productModel.findById(productIDToAdd);
-        //console.log(userLogged)
-        //console.log(productToAdd);
-        
-/*         listOfCarts.products.push(newProduct);
-        await listOfCarts.save(); */
+        const productToAdd = await productModel.findById(productIDToAdd);
+        console.log(productToAdd);
+        const userCart = await userModel.findOne({ email: userLoggedEmail }).populate('cart');
+        console.log(userCart);
+        const productsInUserCart = userCart.cart.products
+        console.log(productsInUserCart)
+        productsInUserCart.push(productToAdd);
+        userCart.cart.products = productsInUserCart
+        console.log(productsInUserCart)
+        console.log(userCart.cart)
+        await userCart.save()
     })
     socket.on('removeProduct', (productID)=>{    //socket.on espera la ocurrencia del evento "removeProduct" (desde el lado del cliente) y un producto, para activarse
         productManager.deleteProduct(productID);
