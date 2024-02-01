@@ -47,21 +47,30 @@
 <script>
 
     //ADD PRODUCT TO CART LISTENER
-    buttonsAddToCart = document.querySelectorAll('.addProductToCart');
+    document.addEventListener('DOMContentLoaded',() => {
+    const buttonsAddToCart = document.querySelectorAll('.addProductToCart');
     buttonsAddToCart.forEach((button) => {
-        button.addEventListener("click", function(){
-            const productIDToAdd = button.getAttribute('productId')
-            const userEmailButton = document.querySelector('#userEmailButton')
-            const userLoggedEmail = userEmailButton.getAttribute('userEmail')
-            console.log("User Email:", userLoggedEmail)
-            addProductToCart(productIDToAdd, userLoggedEmail)
+        button.addEventListener("click", (e) => {
+            const cid = "{{user.cart}}";
+            const pid = e.currentTarget.getAttribute('productId');
+            fetch(`/api/cart/${cid}/product/${pid}`,{
+                method: 'POST',
+                headers: {
+                    'Content-Type':'application/json',
+                }
+            })
+            .then((Response)=>{
+                if(Response.status === 200){
+                    alert('Product added to the cart successfully');
+                } else {
+                    alert ('The product was not added to the cart successfully')
+                }
+            })
+            .catch((Error) => {
+                console.error('Error in the antempt to add a product to the cart:', error);
+                alert('Error in the antempt to add a product to the cart')
+            })
         });
-    })
-    
-
-    //ADD PRODUCT TO CART FUNCTION
-    function addProductToCart(productIDToAdd, userLoggedEmail){
-        console.log("Product Id:", productIDToAdd)
-        socket.emit('addProductToCart', productIDToAdd, userLoggedEmail);
-    }
+    });
+});
 </script>

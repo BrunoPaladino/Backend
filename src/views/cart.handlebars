@@ -24,12 +24,6 @@
     <div>
         <h2>Here we have your order {{user.firstName}}</h2>
     </div>
-        {{else}}
-        <div>
-            <h2>Your order is empty {{user.firstName}}</h2>
-        </div>
-    {{/if}}
-
     <h2>{{this.cartName}}</h2>
     {{#each listOfProducts}}
     <div>
@@ -43,12 +37,45 @@
         <p>Category: {{this.category}}</p>
     </div>
     {{/each}}
+    <div>
+        <button id="confirmPurchase" >Confirm the Purchase</button>
+    </div>
+        {{else}}
+        <div>
+            <h2>Your order is empty {{user.firstName}}</h2>
+        </div>
+    {{/if}}
+
 </div>
 
 <script src="/socket.io/socket.io.js" /></script>       {{!-- Los scripts comunican las view con el socket --}}
 <script src="/src/dao/models/carts.model.js"></script>
 <script>
     //const socket = io();
+    document.addEventListener('DOMContentLoaded',() => {
+        const buttonToConfirmPurchase = document.querySelector('#confirmPurchase');
+        buttonToConfirmPurchase.addEventListener("click", (button) => {
+            const cid = "{{user.cart}}";
+            console.log(cid);
+                        fetch(`/api/cart/${cid}/purchase`,{
+                method: 'POST',
+                headers: {
+                    'Content-Type':'application/json',
+                }
+            })
+            .then((Response)=>{
+                if(Response.status === 200){
+                    alert('Purchase confirmed');
+                } else {
+                    alert ('The purchase was not confirmed successfully')
+                }
+            })
+            .catch((Error) => {
+                console.error('Error in the antempt to confirm the purchase:', error);
+                alert('Error in the antempt to confirm the purchase')
+            })
+        })
+    })
 
     //ADD PRODUCT LISTENER
     buttonAdd = document.querySelector(".addProduct");

@@ -65,8 +65,8 @@ router.get('/', async (req,res)=>{
 //CART
 router.get('/cart', async (req,res)=>{
     const user = req.session.user
-    const userCart = await userModel.findOne({ email: user.email }).populate('cart');   //usamos "populate" para rellenar en el campo "cart" con los productos que corresponden al cart de Mongo que tenga la id correspondiente
-    if(userCart){
+    if(user != undefined){
+        const userCart = await userModel.findOne({ email: user.email }).populate('cart');   //usamos "populate" para rellenar en el campo "cart" con los productos que corresponden al cart de Mongo que tenga la id correspondiente
         const cartName= userCart.cart.cartName;
         const listOfProducts = await Promise.all(               //el Promise.all espera a que se aplique a todos los productos del array el map y genera un array nuevo "listOfProducts"
             userCart.cart.products.map(async (product) => {     //hago un map sobre cada producto del array del usuario para obtener los datos

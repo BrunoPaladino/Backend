@@ -3,7 +3,8 @@ import CartManager from '../dao/CartManager.js';
 const cartRouter = express.Router();
 import cartModel from '../dao/mongo/models/carts.model.js';
 import productModel from '../dao/mongo/models/products.model.js';
-import { completePurchase, createCart, getCartById, getCarts, resolveCart } from '../controllers/cart.controller.js';
+import { addProductToCart, completePurchase, createCart, getCartById, getCarts, resolveCart } from '../controllers/cart.controller.js';
+import { addProduct } from '../controllers/store.controllers.js';
 
 const cartManager = new CartManager();
 
@@ -47,7 +48,9 @@ cartRouter.get('/', getCarts )
 cartRouter.get('/:cid', getCartById)
 cartRouter.post('/', createCart)
 cartRouter.post('/:cid', resolveCart);
+cartRouter.post('/:cid/product/:pid', addProductToCart);
 cartRouter.post('/:cid/purchase', completePurchase);
+
 /* 
 *  END FUNCTIONS WITH FACTORY
 */

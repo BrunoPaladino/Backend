@@ -25,10 +25,15 @@ export const resolveCart = async (req, res) => {
     res.send({status: 'success', payload: result})
 }
 
-export const completePurchase = async (req, res) => {
-    const resolve = req.query;
-    const id = req.params;
+export const addProductToCart = async (req, res) => {
+    const {cid, pid} = req.params;
+    const result = await CartService.productCart(cid, pid);
+    res.send({status: 'success', payload: result})
+}
 
-    const result = await CartService.resolveCart(id, resolve);
+export const completePurchase = async (req, res) => {
+    const {cid} = req.params;
+    console.log(cid)
+    const result = await CartService.completePurchase(cid);
     res.send({status: 'success', payload: result})
 }

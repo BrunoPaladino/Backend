@@ -52,7 +52,8 @@ sessionRouter.post('/login', passport.authenticate('login', {failureRedirect: '/
         lastName : req.user.lastName,
         email: req.user.email,
         age: req.user.age,
-        rol: req.user.rol
+        rol: req.user.rol,
+        cart: req.user.cart
     }
     res.redirect('/profile');
     /* res.send({status: "success", payload: req.user}); */

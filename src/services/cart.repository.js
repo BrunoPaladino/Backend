@@ -23,4 +23,23 @@ export default class CartRepository{
 
         return await this.dao.updateCart(cid, cart)
     }
+
+    productCart = async (cid, pid, quantity = 1) =>{
+        console.log(cid);
+        const cart = await this.getCartById(cid);
+        const productInCartIndex = cart.products.findIndex (product => product.productId.equals(pid));
+        if(productInCartIndex !== -1){
+            cart.products[productInCartIndex].quantity = cart.products[productInCartIndex].quantity +1;
+        } else {
+            const productToAdd = {productId : pid, quantity};
+            cart.products.push(productToAdd);
+        }
+        return await this.dao.updateCart(cid, cart);
+    }
+
+    completePurchase = async (cid) => {
+        const cart = await this.getCartById(cid);
+        console.log(cart);
+
+    }
 }
