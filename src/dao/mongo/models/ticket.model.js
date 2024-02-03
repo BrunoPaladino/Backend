@@ -26,10 +26,10 @@ const ticketSchema = new mongoose.Schema({
     },
 
     //referencia al usuario
-    purchaser: {
+/*     purchaser: {
         type: mongoose.Schema.Types.ObjectId,       //en el campo cart se aplicara un identificador unico (ID) generado por Mongo y que refiere a documentos en otra coleccion
         ref: 'users'                            //se aclara a que coleccion se hace referencia para aplicar el ID generado por Mongo
-    }
+    } */
 });
 
 /* 

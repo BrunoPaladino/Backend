@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 export let Cart;
 export let User;
 export let Store;
+export let Ticket;
 
 console.log(`Persistence with ${config.PERSISTENCE}`)
 
@@ -27,10 +28,12 @@ switch (config.PERSISTENCE) {
         const{ default: CartMongo} = await import ('./mongo/cart.mongo.js');
         const{ default: UserMongo} = await import ('./mongo/user.mongo.js');
         const{ default: StoreMongo} = await import ('./mongo/stores.mongo.js');
+        const{ default: TicketMongo} = await import ('./mongo/ticket.mongo.js')
         
         Cart = CartMongo;
         User = UserMongo;
         Store = StoreMongo;
+        Ticket = TicketMongo;
     break;
 
     default:

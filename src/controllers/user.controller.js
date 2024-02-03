@@ -13,6 +13,6 @@ export const getUserById = async (req, res) => {
 
 export const saveUser = async (req, res) => {
     const user = req.body;
-    const result = await UserService.addStore(user);
+    const result = await UserService.saveUser(user);
     res.send({status: 'success', payload: result})
 }
