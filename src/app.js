@@ -25,6 +25,7 @@ import dotenv from 'dotenv';
 import config from './config/config.js';            //config es la configuracion de las variables de ambiente (pasadas por .env)
 import productModel from './dao/mongo/models/products.model.js';
 import userModel from './dao/mongo/models/user.model.js';
+import { addDevelopmentLogger, addProductionLogger } from './utils/logger.js';
 
 const app = express();
 const server = http.createServer(app);
@@ -108,6 +109,17 @@ socketServer.on('connection', (socket) => {     //socketServer.on se usa para es
         console.log('User  disconnected');
     });
 });
+
+app.use(addDevelopmentLogger)
+app.use(addProductionLogger)
+
+app.get('/loggerTest', (req,res)=>{
+    req.developMentLogger.debug('Testeo de developmentLogger');
+})
+
+app.get('/loggerTest2', (req,res)=>{
+    req.productionLogger.info('Testeo de productionLogger');
+})
 
 //Routes
 app.use('/api/products', productRouter);            // sintaxis : (endpoint, ruta vinculada al endpoint)

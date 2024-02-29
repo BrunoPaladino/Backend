@@ -2,8 +2,11 @@ import express from "express";
 import userModel from "../dao/mongo/models/user.model.js";
 import { createHash, isValidPassword } from "../utils.js";
 import passport from "passport";
+import { addDevelopmentLogger} from "../utils/logger.js";
 
 const sessionRouter= express.Router();
+
+sessionRouter.use(addDevelopmentLogger)
 
 //Crear usuario en la DB
 /* sessionRouter.post('/singup', async (req,res)=>{
@@ -45,6 +48,7 @@ sessionRouter.get('/failregister', async(req, res)=>{
 }) */
 sessionRouter.post('/login', passport.authenticate('login', {failureRedirect: '/faillogin'}), async(req, res)=>{    //para la autenticacion usa un metodo personalizado "login"
     if(!req.user){
+        req.developmentLogger.debug(`The user doesnt exist in our data base`)
         return res.status(400).send({status:"error", error:"The user doesnt exist in our data base"})
     }
     req.session.user = {
@@ -55,6 +59,7 @@ sessionRouter.post('/login', passport.authenticate('login', {failureRedirect: '/
         rol: req.user.rol,
         cart: req.user.cart
     }
+    console.log(req.session.user)
     res.redirect('/profile');
     /* res.send({status: "success", payload: req.user}); */
 });

@@ -41,7 +41,6 @@ export default class CartRepository{
     }
 
     productCart = async (cid, pid, quantity = 1) =>{
-        console.log(cid);
         const cart = await this.getCartById(cid);
         const productInCartIndex = cart.products.findIndex (product => product.productId.equals(pid));
         if(productInCartIndex !== -1){

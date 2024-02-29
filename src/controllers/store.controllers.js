@@ -21,7 +21,13 @@ export const addStore = async (req, res) => {
 export const addProduct = async (req, res) => {
     const product = req.body;
     const id = req.params;
-
-    const result = await StoreService.addProduct(id, product);
-    res.send({status: 'success', payload: result})
+    try{
+        const result = await StoreService.addProduct(id, product);
+        req.developmentLogger.info(`Product added to the store: ${JSON.stringify(product)}`)
+        res.send({status: 'success', payload: result})
+    }
+    catch (error){
+        req.developmentLogger.error(`Error adding the product to the store: ${error}`)
+        res.status(500).send({status: 'error', message: 'Error al agregar producto al carrito'});
+    }
 }

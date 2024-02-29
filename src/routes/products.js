@@ -3,6 +3,7 @@ import ProductManager from '../dao/ProductManager.js';
 import productModel from '../dao/mongo/models/products.model.js';     //importo el modelo de producto de MongoDB
 
 import { addProduct, addStore, getStoreById, getStores } from '../controllers/store.controllers.js';
+import { addDevelopmentLogger } from '../utils/logger.js';
 
 const productRouter = express.Router();
 const productManager = new ProductManager(); 
@@ -66,6 +67,7 @@ productRouter.delete('/:pid', (req,res)=>{
 * END FUNCTIONS WITH FILESYSTEM 
 */
 
+productRouter.use(addDevelopmentLogger);
 
 /* 
 * FUNCTIONS WITH FACTORY

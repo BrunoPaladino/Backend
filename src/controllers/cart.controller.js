@@ -27,13 +27,24 @@ export const resolveCart = async (req, res) => {
 
 export const addProductToCart = async (req, res) => {
     const {cid, pid} = req.params;
-    const result = await CartService.productCart(cid, pid);
-    res.send({status: 'success', payload: result})
+    try{
+        const result = await CartService.productCart(cid, pid);
+        req.productionLogger.info(`Product added to cart. Cart ID: ${cid}, Product ID: ${pid}`)
+        res.send({status: 'success', payload: result})
+    } catch(error) {
+        req.productionLogger.error(`Error adding the product to cart: ${error}`)
+        res.status(500).send({ status: 'error', message: 'Error adding the product to cart' });
+    }
 }
 
 export const completePurchase = async (req, res) => {
     const {cid} = req.params;
-    console.log(cid)
-    const result = await CartService.completePurchase(cid);
-    res.send({status: 'success', payload: result})
+    try{
+        req.productionLogger.info(`The customer is completing the purchase of the cart: ${cid}`);
+        const result = await CartService.completePurchase(cid);
+        res.status(200).send({status: 'success', payload: result})
+    } catch (error){
+        req.productionLogger.error(`Error finishing the purchase: ${error}`)
+        res.status(500).send({ status: 'error', message: 'Error finishing the purchase' });
+    }
 }

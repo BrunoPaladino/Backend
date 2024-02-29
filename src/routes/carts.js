@@ -5,6 +5,7 @@ import cartModel from '../dao/mongo/models/carts.model.js';
 import productModel from '../dao/mongo/models/products.model.js';
 import { addProductToCart, completePurchase, createCart, getCartById, getCarts, resolveCart } from '../controllers/cart.controller.js';
 import { addProduct } from '../controllers/store.controllers.js';
+import { addDevelopmentLogger, addProductionLogger } from '../utils/logger.js';
 
 const cartManager = new CartManager();
 
@@ -40,6 +41,8 @@ cartRouter.get('/:cid', (req,res)=>{
 * END FUNCTIONS WITH FILESYSTEM 
 */
 
+
+cartRouter.use(addProductionLogger)
 
 /* 
 * FUNCTIONS WITH FACTORY
