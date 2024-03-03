@@ -66,6 +66,10 @@ socketServer.on('connection', (socket) => {     //socketServer.on se usa para es
         listOfCarts.products.push(newProduct);
         await listOfCarts.save();
     })
+/*     socket.on('removeProductMongo', async (productIdToRemove)=>{
+        const productToRemove = await productModel.findOne({code: productIdToRemove});
+        console.log(productToRemove)
+    }) */
     socket.on('addProductToCart', async (productIDToAdd, userLoggedEmail)=>{
         const userLogged = await userModel.findOne({ email: userLoggedEmail});
         if (userLogged) {

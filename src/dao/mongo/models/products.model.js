@@ -19,7 +19,8 @@ const productSchema = new mongoose.Schema({
     status: String,
     code : String,
     stock: Number,
-    category: String
+    category: String,
+    owner: String,
 });
 
 /*

@@ -7,21 +7,36 @@
     </div>
     {{/if}}
 
-    {{#each listOfProducts}}
-    <div>
-        <h2>Title: {{this.title}}</h2>
-        <p>Description {{this.description}}</p>
-        <p>Images: {{this.thumbnail}}</p>
-        <p>Price: {{this.price}}</p>
-        <p>Status: {{this.status}}</p>
-        <p>Code: {{this.code}}</p>
-        <p>Stock: {{this.stock}}</p>
-        <p>Category: {{this.category}}</p>
+    {{#if isAdmin }}
+        {{#each listOfProducts}}
         <div>
-            <button productId={{this._id}} class="addProductToCart" >Add To Cart</button>
+            <h2>Title: {{this.title}}</h2>
+            <p>Description {{this.description}}</p>
+            <p>Images: {{this.thumbnail}}</p>
+            <p>Price: {{this.price}}</p>
+            <p>Status: {{this.status}}</p>
+            <p>Code: {{this.code}}</p>
+            <p>Stock: {{this.stock}}</p>
+            <p>Category: {{this.category}}</p>
         </div>
-    </div>
-    {{/each}}
+        {{/each}}
+    {{else}}
+        {{#each listOfProducts}}
+        <div>
+            <h2>Title: {{this.title}}</h2>
+            <p>Description {{this.description}}</p>
+            <p>Images: {{this.thumbnail}}</p>
+            <p>Price: {{this.price}}</p>
+            <p>Status: {{this.status}}</p>
+            <p>Code: {{this.code}}</p>
+            <p>Stock: {{this.stock}}</p>
+            <p>Category: {{this.category}}</p>
+            <div>
+                <button productId={{this._id}} class="addProductToCart" >Add To Cart</button>
+            </div>
+        </div>
+        {{/each}}
+    {{/if}}
 
     <div>
         <h2>Information</h2>

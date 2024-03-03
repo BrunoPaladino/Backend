@@ -59,7 +59,6 @@ sessionRouter.post('/login', passport.authenticate('login', {failureRedirect: '/
         rol: req.user.rol,
         cart: req.user.cart
     }
-    console.log(req.session.user)
     res.redirect('/profile');
     /* res.send({status: "success", payload: req.user}); */
 });
@@ -78,9 +77,16 @@ sessionRouter.post('/changePassword', async(req,res)=>{
         console.log('The user doesnt exist in our data base');
         return res.redirect('/login');
     }
-    userToModify.password = createHash(password);
-    req.session.user = userToModify;
-    res.redirect('/profile');
+    try{
+        userToModify.password = createHash(password);
+        req.session.user = userToModify;
+        await userToModify.save();          //espera a que se grabe el cambio en el usuario de Mongo
+        console.log("The user : ", req.session.user.firstName, " has changed the password")
+        res.redirect('/profile');
+    } catch(error){
+        console.error("Error updating the password");
+        return res.status(500).send('Error updating password')
+    }
 })
 
 //Cerrar sesion de usuario

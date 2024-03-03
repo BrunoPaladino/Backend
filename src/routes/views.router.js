@@ -9,6 +9,12 @@ import userModel from "../dao/mongo/models/user.model.js";
 
 import passport from "passport";
 
+import nodemailer from 'nodemailer';
+
+import crypto from 'crypto'
+import { createHash } from "../utils.js";
+import bcrypt from 'bcrypt';
+
 const productManager = new ProductManager();
 const router = express.Router();
 
@@ -34,20 +40,13 @@ router.get('/', async (req,res)=>{
         });
         listOfProducts.prevLink=listOfProducts.hasPrevPage? `/?page=${listOfProducts.prevPage}&limit=${limit}`:" "
         listOfProducts.nextLink=listOfProducts.hasNextPage? `/?page=${listOfProducts.nextPage}&limit=${limit}`:" "
-
-        console.log(listOfProducts.nextPage)
-        res.render('home', { listOfProducts: listOfProducts.docs,user }/* {
-            status: listOfProducts.status,
-            payload: listOfProducts,
-            totalPages: listOfProducts.totalPages,
-            prevPage: listOfProducts.prevPage,
-            nextPage: listOfProducts.nextPage,
-            page: listOfProducts.page,
-            hasPrevPage: listOfProducts.hasPrevPage,
-            hasNextPage: listOfProducts.hasNextPage,
-            prevLink: listOfProducts.prevLink,
-            netxLink: listOfProducts.netxLink
-            } */);  //metodo para renderizar render(nombre de plantilla, objeto para reemplazar en la plantilla)
+        
+        if(user.rol === "Administrador"){
+            const isAdmin = user.rol;
+            console.log("Ingreso de administrador")
+            res.render('home', { listOfProducts: listOfProducts.docs,user, isAdmin });  //metodo para renderizar render(nombre de plantilla, objeto para reemplazar en la plantilla)
+        }
+        res.render('home', { listOfProducts: listOfProducts.docs,user });  //metodo para renderizar render(nombre de plantilla, objeto para reemplazar en la plantilla)
     } else {
         const listOfProducts = await productModel.paginate( {} , {
             page,
@@ -57,6 +56,10 @@ router.get('/', async (req,res)=>{
         });
         listOfProducts.prevLink=listOfProducts.hasPrevPage? `/?page=${listOfProducts.prevPage}&limit=${limit}`:" "
         listOfProducts.nextLink=listOfProducts.hasNextPage? `/?page=${listOfProducts.nextPage}&limit=${limit}`:" "
+        if(user != undefined && user.rol === "Administrador"){
+            const isAdmin = user.rol;
+            res.render('home', { listOfProducts: listOfProducts.docs,user, isAdmin });  //metodo para renderizar render(nombre de plantilla, objeto para reemplazar en la plantilla)
+        }
         res.render('home', { listOfProducts: listOfProducts.docs,user });       //al hacer el paginado los productos se guardan en un array "docs", por eso pasamos asi la lista de productos
     }
 });
@@ -83,6 +86,10 @@ router.get('/cart', async (req,res)=>{
                 };
             })
         );
+        if (user.rol === "Administrador"){
+            const isAdmin = user.rol;
+            res.render('cart', {listOfProducts:listOfProducts, cartName: cartName, user, isAdmin});  //metodo para renderizar render(nombre de plantilla, objeto para reemplazar en la plantilla)
+        }
         res.render('cart', {listOfProducts:listOfProducts, cartName: cartName, user});  //metodo para renderizar render(nombre de plantilla, objeto para reemplazar en la plantilla)
     } else {
         res.render('cart',{user})
@@ -146,10 +153,137 @@ router.get('/changePassword', (req,res)=>{
 //Perfil de usuario
 router.get('/profile', (req,res)=>{
     const user = req.session.user;   //toma los datos del usuario desde la base de datos session
-
-    res.render('profile',{user});
+    if(user!= undefined && user.rol === "Administrador"){
+        const isAdmin = user;
+        res.render('profile',{isAdmin})
+    } else {
+        if(user!= undefined && user.rol != "Administrador"){
+            res.render('profile',{user});
+        } else {
+            res.render('profile',{});
+        }
+    }
 })
 
+//Agregar Producto Mongo
+router.get('/addproduct', (req, res) =>{
+    res.render('addProduct')
+})
+
+//Eliminar Producto Mongo
+router.get('/removeproduct', (req, res) =>{
+    res.render('removeProduct')
+})
+
+//Actualizar Producto Mongo
+router.get('/updateproduct', (req, res) =>{
+    res.render('updateProduct')
+})
+
+
+//Configuracion para enviar por mail la restauracion de contraseña
+const transport = nodemailer.createTransport({
+    service: 'gmail',
+    port: 587,
+    auth: {
+        user: 'bruno.s.paladino@gmail.com',
+        pass: 'haibbvsvzhrhwaro'                //contraseña dada por gmail para aplicacion
+    },
+    tls: {
+        rejectUnauthorized: false
+    }
+});
+
+//Funcion para generar un token unico
+function generateToken(){
+    return crypto.randomBytes(20).toString('hex');
+}
+
+//Renderizar form para restaurar contraseña con mail
+router.get('/mail', async (req, res) =>{
+    res.render('mail')
+})
+
+//Restaurar contraseña por mail
+router.post('/passwordRestore', async (req, res) =>{
+    const {email} = req.body;
+    try{
+        const userToChangePassword = await userModel.findOne({email: email})
+        if(!userToChangePassword){
+            return res.status(400).send('User not found');
+        }
+        const token = generateToken();      //genera token para cambiar la contraseña del usuario
+        const expires = Date.now() + 3600000;       // 1 hora
+        userToChangePassword.resetPasswordToken = token;
+        userToChangePassword.resetPasswordExpires = expires;
+        await userToChangePassword.save();              //guarda el usuario en MongoDB
+
+        const resetLink= `http://localhost:8080/resetPassword/${token}`;        //link para restaurar contraseña
+        const result = await transport.sendMail({                               //enviar mail para restaurar contraseña
+            from: 'bruno.s.paladino@gmail.com',
+            to: 'bruno.s.paladino@gmail.com',
+            subject: 'Restore your password',
+            html: `
+                <div>
+                    <h1> Restore your password </h1>
+                    <p> To do it use the link below: </p>
+                    <a href ${resetLink}'> ${resetLink}</a>
+                </div>
+            `,
+            attachments: []
+        })
+        res.send(`Email sent!`)
+    } catch(error){
+        console.error(`Error sending email: `, error);
+        res.status(500).send(`Error sending email`)
+    }
+})
+
+
+//Endpoint para restaurar contraseña
+router.get('/resetPassword/:token', async(req,res)=>{           //el endpoint es el enviado por mail
+    const {token} = req.params;
+    try {
+        const user = await userModel.findOne({ resetPasswordToken: token, resetPasswordExpires: { $gt: Date.now() } });
+        console.log(user);
+        if (!user) {
+            res.status(400).send('El token de restablecimiento de contraseña no es válido o ha expirado');
+            res.render('/mail', {})                                         //redirigimos a la pagina para que coloque el mail de nuevo para restaurar contraseña
+        } else {
+            res.render('restorePasswordPage', { token });                     // Renderizar la página para reestablecer la contraseña
+        }
+    } catch (error) {
+        console.error('Error restoring password :', error);
+        res.status(500).send('Error restoring password');
+    }
+})
+
+// Endpoint para actualizar la contraseña
+router.post('/restorePasswordPage/:token', async (req, res) => {
+    const { token } = req.params;
+    const { newPassword } = req.body;
+    try {
+        const user = await userModel.findOne({ resetPasswordToken: token, resetPasswordExpires: { $gt: Date.now() } });
+        if (!user) {
+            res.status(400).send('El token de restablecimiento de contraseña no es válido o ha expirado');
+            res.render('/mail', {})                                 //redirigimos a la pagina para que coloque el mail de nuevo para restaurar contraseña
+        }
+
+        if(bcrypt.compareSync(newPassword, user.password) == true ){          //se asegura que la nueva contraseña no sea la misma que la anterior
+            res.status(400).send('The new password needs to be different from the last one');
+        } else {
+            // Actualizar la contraseña y eliminar el token de restablecimiento
+            user.password = createHash(newPassword);
+            user.resetPasswordToken = undefined;
+            user.resetPasswordExpires = undefined;
+            await user.save();
+            res.status(200).send('Contraseña restablecida correctamente');
+        }
+    } catch (error) {
+        console.error('Error al restablecer la contraseña:', error);
+        res.status(500).send('Error al restablecer la contraseña');
+    }
+});
 
 //Ingresar con usuario de Github
 router.get(

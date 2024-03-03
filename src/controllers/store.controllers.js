@@ -28,6 +28,6 @@ export const addProduct = async (req, res) => {
     }
     catch (error){
         req.developmentLogger.error(`Error adding the product to the store: ${error}`)
-        res.status(500).send({status: 'error', message: 'Error al agregar producto al carrito'});
+        res.status(500).send({status: 'error', message: 'Error adding the product to the store'});
     }
 }

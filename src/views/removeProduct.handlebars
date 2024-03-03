@@ -1,0 +1,31 @@
+<div>
+    <h1>Delete a Product of our Store</h1>
+
+    <div id="formContainer">
+        <fieldset>
+            <legend>Delete Product</legend>
+                <label for="productCode">Product Code:</label>
+                <input type="text" name="Product Code" placeholder="Product Code" id="productIdRemove" required>
+                <br>
+                    <div>
+                        <button type="button" class="removeProduct"> Delete Product </button>
+                    </div>
+        </fieldset>
+    </div>
+</div>
+
+
+<script src="/socket.io/socket.io.js" /></script>       {{!-- Los scripts comunican las view con el socket --}}
+<script>
+        //REMOVE PRODUCT LISTENER
+    buttonRemove = document.querySelector(".removeProduct");
+    buttonRemove.addEventListener("click", removeProduct);
+
+    //REMOVE PRODUCT FUNCTION
+    function removeProduct(){
+        const productIDToRemove = document.getElementById("productIdRemove").value;
+        console.log("Producto removido con ID:" , productIDToRemove);
+        //socket.emit('removeProductMongo', productIDToRemove);
+    }
+</script>
+<script src="/js/index.js" /></script>

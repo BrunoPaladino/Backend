@@ -34,6 +34,8 @@ const initializePassport = () =>{
             if(userInformation.email === 'adminCoder@coder.com' && userInformation.password === 'adminCod3r123'){
                 const rol = {rol: "Administrador"};
                 userInformation.password = createHash(req.body.password);
+                userInformation.resetPasswordToken = undefined;
+                userInformation.resetPasswordExpires = undefined;
                 const userInformationWithRol = {...userInformation,...rol};
                 userInformationWithRol.cart = newCart._id;                  //asigno a la propiedad cart, del esquema de usuario, el carrito creado
                 const user = await userModel.create(userInformationWithRol);
@@ -41,6 +43,8 @@ const initializePassport = () =>{
             } else {
                 const rol = {rol: "Usuario"};
                 userInformation.password = createHash(req.body.password);
+                userInformation.resetPasswordToken = undefined;
+                userInformation.resetPasswordExpires = undefined;
                 const userInformationWithRol = {...userInformation,...rol};
                 userInformationWithRol.cart = newCart._id;                  //asigno a la propiedad cart, del esquema de usuario, el carrito creado
                 const user = await userModel.create(userInformationWithRol);

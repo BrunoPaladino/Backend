@@ -1,31 +1,30 @@
 <div>
-    {{#if user}}
-    <div>
-        <h2>Here we have your order {{user.firstName}}</h2>
+    <h1>Add a New Product to our Store</h1>
+
+        <div id="formContainer">
+        <fieldset>
+            <legend>New Product</legend>
+                <label for="productTitle">Product Title:</label>
+                <input type="text" name="Product ID" placeholder="Product Title" id="productTitle" required>
+                <br>
+                <label for="productDescription">Product Description:</label>
+                <input type="text" name="Product Description" placeholder="Product Description" id="productDescription" required>
+                <br>
+                <label for="productPrice">Product Price:</label>
+                <input type="text" name="Product Price" placeholder="Product Price" id="productPrice" required>
+                <br>
+                <label for="productCode">Product Code:</label>
+                <input type="text" name="Product Code" placeholder="Product Code" id="productCode" required>
+                <br>
+                    <div>
+                        <button type="button" class="addProduct"> Add to Store </button>
+                    </div>
+        </fieldset>
     </div>
-    <h2>{{this.cartName}}</h2>
-    {{#each listOfProducts}}
-    <div>
-        <h3>Title: {{this.title}}</h3>
-        <p>Description: {{this.description}}</p>
-        <p>Images: {{this.thumbnail}}</p>
-        <p>Price: {{this.price}}</p>
-        <p>Status: {{this.status}}</p>
-        <p>Code: {{this.code}}</p>
-        <p>Stock: {{this.stock}}</p>
-        <p>Category: {{this.category}}</p>
-    </div>
-    {{/each}}
-    <div>
-        <button id="confirmPurchase" >Confirm the Purchase</button>
-    </div>
-        {{else}}
-        <div>
-            <h2>Your order is empty {{user.firstName}}</h2>
-        </div>
-    {{/if}}
+
 
 </div>
+
 
 <script src="/socket.io/socket.io.js" /></script>       {{!-- Los scripts comunican las view con el socket --}}
 <script src="/src/dao/models/carts.model.js"></script>

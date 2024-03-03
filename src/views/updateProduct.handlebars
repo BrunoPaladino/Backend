@@ -1,0 +1,27 @@
+<div>
+    <h1>Update a Product of our Store</h1>
+
+    <div id="formContainer">
+        <fieldset>
+            <legend>Update Product</legend>
+                <label for="productTitle">Product Title:</label>
+                <input type="text" name="Product ID" placeholder="Product Title" id="productTitle" required>
+                <br>
+                <label for="productDescription">Product Description:</label>
+                <input type="text" name="Product Description" placeholder="Product Description" id="productDescription" required>
+                <br>
+                <label for="productPrice">Product Price:</label>
+                <input type="text" name="Product Price" placeholder="Product Price" id="productPrice" required>
+                <br>
+                <label for="productCode">Product Code:</label>
+                <input type="text" name="Product Code" placeholder="Product Code" id="productCode" required>
+                <br>
+                    <div>
+                        <button type="button" class="removeProduct"> Update Product </button>
+                    </div>
+        </fieldset>
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js" /></script>       {{!-- Los scripts comunican las view con el socket --}}
+<script src="/js/index.js" /></script>

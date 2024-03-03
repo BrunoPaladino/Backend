@@ -1,19 +1,49 @@
 <div>
-    {{#if user}}
-    <h1>Welcome user!</h1>
-    <div>
-        <h2>Profile User</h1>
+
+    {{#if isAdmin}}
+    <h1>Welcome Administrator</h1>
         <div>
-            <h3>First Name: {{user.firstName}}</h3>
-            <h3>Last Name: {{user.lastName}}</h3>
-            <h3>Email: {{user.email}}</h3>
-            <h3>Age: {{user.age}}</h3>
-            <h3>Rol: {{user.rol}}</h3>
+            <h2>Administrator Profile</h1>
+            <div>
+                <h3>First Name: {{isAdmin.firstName}}</h3>
+                <h3>Last Name: {{isAdmin.lastName}}</h3>
+                <h3>Email: {{isAdmin.email}}</h3>
+                <h3>Age: {{isAdmin.age}}</h3>
+                <h3>Rol: {{isAdmin.rol}}</h3>
+            </div>
         </div>
-    </div>
-    {{else}}
-    <h1>Welcome visitor!</h1>
-    <h2>You are not logged in our websyte, please do it to know you better</h2>
+            <h2>Here you can control our store</h1>
+            <div>
+                <ul>
+                    <li>
+                        <a href="/addproduct">Add a new product</a>
+                    </li>
+                    <li>
+                        <a href="/removeproduct">Delete a product</a>
+                    </li>
+                    <li>
+                        <a href="/updateproduct">Update product</a>
+                    </li>
+                </ul>
+            </div>
+            <br>
+        </div>
+
+    {{else if user}}
+        <h1>Welcome user!</h1>
+        <div>
+            <h2>Profile User</h1>
+            <div>
+                <h3>First Name: {{user.firstName}}</h3>
+                <h3>Last Name: {{user.lastName}}</h3>
+                <h3>Email: {{user.email}}</h3>
+                <h3>Age: {{user.age}}</h3>
+                <h3>Rol: {{user.rol}}</h3>
+            </div>
+        </div>
+        {{else}}
+        <h1>Welcome visitor!</h1>
+        <h2>You are not logged in our websyte, please do it to know you better</h2>
     {{/if}}
 </div>
 

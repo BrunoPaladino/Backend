@@ -18,6 +18,8 @@ const userSchema = new mongoose.Schema({
     },
     age: Number,
     password: String,
+    resetPasswordToken: String,                     //restaurar password por mail
+    resetPasswordExpires: Number,
     rol: String,
 
     //referencia al carrito del usuario
