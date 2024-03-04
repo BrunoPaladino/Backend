@@ -66,13 +66,19 @@
     const buttonsAddToCart = document.querySelectorAll('.addProductToCart');
     buttonsAddToCart.forEach((button) => {
         button.addEventListener("click", (e) => {
+            userRol = "{{user.rol}}";
             const cid = "{{user.cart}}";
             const pid = e.currentTarget.getAttribute('productId');
+            const requestBody={
+                userRol : userRol
+            };
+
             fetch(`/api/cart/${cid}/product/${pid}`,{
                 method: 'POST',
                 headers: {
                     'Content-Type':'application/json',
-                }
+                },
+                body: JSON.stringify(requestBody)
             })
             .then((Response)=>{
                 if(Response.status === 200){

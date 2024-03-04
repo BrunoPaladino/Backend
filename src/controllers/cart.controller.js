@@ -1,4 +1,5 @@
-import { CartService } from "../services/index.js";
+import storeModel from "../dao/mongo/models/stores.model.js";
+import { CartService, StoreService } from "../services/index.js";
 
 export const getCarts = async (req, res) => {
     const result = await CartService.getCarts();
@@ -26,11 +27,21 @@ export const resolveCart = async (req, res) => {
 }
 
 export const addProductToCart = async (req, res) => {
+    const userRol = req.body;
     const {cid, pid} = req.params;
+    console.log(userRol);
+    const productToAdd = await StoreService.getStoreById(pid);
+    console.log(productToAdd);
+    console.log(userRol.userRol);
     try{
-        const result = await CartService.productCart(cid, pid);
-        req.productionLogger.info(`Product added to cart. Cart ID: ${cid}, Product ID: ${pid}`)
-        res.send({status: 'success', payload: result})
+        if(productToAdd.owner === 'Premium' && userRol.userRol === 'Premium'){
+            console.log('The product cannot be added to your cart because you are a Premium user and you added that product to the store');
+            res.status(500).send({ status: 'error', message: 'The product cannot be added to your cart because you are a Premium user and you added that product to the store' });
+        } else {
+            const result = await CartService.productCart(cid, pid);
+            req.productionLogger.info(`Product added to cart. Cart ID: ${cid}, Product ID: ${pid}`)
+            res.send({status: 'success', payload: result})
+        }
     } catch(error) {
         req.productionLogger.error(`Error adding the product to cart: ${error}`)
         res.status(500).send({ status: 'error', message: 'Error adding the product to cart' });

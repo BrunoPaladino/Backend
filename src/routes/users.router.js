@@ -10,6 +10,29 @@ const usersRouter = express.Router();
 usersRouter.get('/', getUsers);
 usersRouter.get('/:uid', getUserById);
 usersRouter.post('/', saveUser);
+usersRouter.post('/premium/:uid', async(req,res)=>{
+        const uid = req.params.uid;                           // Extraer el _id del parámetro uid
+        const user = await userModel.findById(uid);
+        console.log(user)
+        try{
+                let newRol;
+                if(user.rol ==='Premium'){
+                        newRol = 'Usuario';
+                } else if(user.rol ==='Usuario') {
+                        newRol = 'Premium';
+                } else {
+                        console.log('The user is an Administrator')
+                        return res.status(403).send('The user is an Administrator')
+                }
+                user.rol=newRol;
+                await user.save();
+                console.log(`The user ${user.firstName} has changed his rol to ${newRol}`);
+                res.status(200).send(`The user has changed his rol to ${newRol}`)
+        } catch(error){
+                console.error('The user rol cannot be changed');
+                res.status(500).send('Error changing the user rol')
+        }
+})
 
 
 

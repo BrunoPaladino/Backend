@@ -742,3 +742,238 @@
 {"level":"http","message":"[GET] /removeproduct - 21:32:37"}
 {"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
 {"level":"http","message":"[GET] /js/index.js - 21:32:38"}
+{"level":"http","message":"[POST] /api/users/65e4d199de6d3ac47302cba4 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/65e4d199de6d3ac47302cba4 - 21:50:58"}
+{"level":"http","message":"[POST] /api/users/premium/65e4d199de6d3ac47302cba4 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/premium/65e4d199de6d3ac47302cba4 - 21:51:51"}
+{"level":"http","message":"[POST] /api/users/premium/65e4d199de6d3ac47302cba4 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/premium/65e4d199de6d3ac47302cba4 - 21:56:24"}
+{"level":"http","message":"[POST] /api/users/premium/65e4d199de6d3ac47302cba4 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/premium/65e4d199de6d3ac47302cba4 - 21:58:01"}
+{"level":"http","message":"[POST] /api/users/premium/65e4d199de6d3ac47302cba4 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/premium/65e4d199de6d3ac47302cba4 - 21:58:25"}
+{"level":"http","message":"[POST] /api/users/premium/65e4d199de6d3ac47302cba4 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/premium/65e4d199de6d3ac47302cba4 - 21:58:51"}
+{"level":"http","message":"[POST] /api/users/premium/65e4d199de6d3ac47302cba4 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/premium/65e4d199de6d3ac47302cba4 - 22:00:29"}
+{"level":"http","message":"[POST] /api/users/premium/65e4d199de6d3ac47302cba4 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/premium/65e4d199de6d3ac47302cba4 - 22:02:45"}
+{"level":"http","message":"[POST] /api/users/premium/65e4edfbad58f8df5bb2ef23 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/premium/65e4edfbad58f8df5bb2ef23 - 22:03:04"}
+{"level":"http","message":"[POST] /api/users/premium/65e4edfbad58f8df5bb2ef23 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/premium/65e4edfbad58f8df5bb2ef23 - 22:10:16"}
+{"level":"http","message":"[POST] /api/users/premium/65e4edfbad58f8df5bb2ef23 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/premium/65e4edfbad58f8df5bb2ef23 - 22:11:33"}
+{"level":"http","message":"[POST] /api/users/premium/65e4edfbad58f8df5bb2ef23 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/premium/65e4edfbad58f8df5bb2ef23 - 22:11:58"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 22:27:34"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 22:39:48"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:39:49"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 22:39:51"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 22:39:54"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 22:39:55"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:39:56"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 22:39:59"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:39:59"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 22:40:28"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:40:29"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 22:40:30"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 22:40:31"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:40:31"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 22:40:33"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:40:33"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 22:43:47"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:43:48"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 22:43:48"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 22:43:52"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 22:43:53"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:43:53"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 22:43:56"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:43:56"}
+{"level":"http","message":"[POST] /api/cart/65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - 22:43:59"}
+{"level":"http","message":"[POST] /65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - 22:43:59"}
+{"level":"info","message":"Product added to cart. Cart ID: 65e4edfbad58f8df5bb2ef21, Product ID: 6549bd3373edfc3edc82a2e6"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 22:47:33"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:47:35"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 22:47:37"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 22:47:40"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 22:47:41"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:47:42"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 22:47:57"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:47:58"}
+{"level":"http","message":"[POST] /api/cart/65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - 22:48:00"}
+{"level":"http","message":"[POST] /65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - 22:48:00"}
+{"level":"info","message":"Product added to cart. Cart ID: 65e4edfbad58f8df5bb2ef21, Product ID: 6549bd3373edfc3edc82a2e6"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 22:50:29"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:50:30"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 22:50:31"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 22:50:33"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 22:50:34"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:50:35"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 22:50:37"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:50:37"}
+{"level":"http","message":"[POST] /api/cart/65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - 22:50:39"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 22:51:16"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:51:17"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 22:51:22"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 22:51:24"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:51:24"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 22:51:26"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:51:26"}
+{"level":"http","message":"[POST] /api/cart/65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - 22:51:30"}
+{"level":"http","message":"[POST] /65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - 22:51:30"}
+{"level":"info","message":"Product added to cart. Cart ID: 65e4edfbad58f8df5bb2ef21, Product ID: 6549bd3373edfc3edc82a2e6"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 22:53:42"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:53:43"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 22:53:44"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 22:53:46"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 22:53:47"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:53:48"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 22:53:50"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:53:50"}
+{"level":"http","message":"[POST] /api/cart/65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - 22:53:52"}
+{"level":"http","message":"[POST] /65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - 22:53:52"}
+{"level":"info","message":"Product added to cart. Cart ID: 65e4edfbad58f8df5bb2ef21, Product ID: 6549bd3373edfc3edc82a2e6"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 22:55:36"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:55:37"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 22:55:38"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 22:55:40"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 22:55:41"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:55:42"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 22:55:45"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:55:45"}
+{"level":"http","message":"[POST] /api/cart/65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - 22:55:49"}
+{"level":"http","message":"[POST] /65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - 22:55:49"}
+{"level":"info","message":"Product added to cart. Cart ID: 65e4edfbad58f8df5bb2ef21, Product ID: 6549bd3373edfc3edc82a2e6"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 23:00:33"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 23:00:34"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 23:00:34"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 23:00:37"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 23:00:38"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 23:00:38"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 23:00:40"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 23:00:40"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 23:00:41"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 23:00:42"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 23:00:43"}
+{"level":"http","message":"[POST] /api/cart/65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - 23:00:45"}
+{"level":"http","message":"[POST] /65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - 23:00:45"}
+{"level":"info","message":"Product added to cart. Cart ID: 65e4edfbad58f8df5bb2ef21, Product ID: 6549bd3373edfc3edc82a2e6"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 23:03:08"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 23:03:09"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 23:03:10"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 23:03:12"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 23:03:13"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 23:03:14"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 23:03:15"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 23:03:16"}
+{"level":"http","message":"[POST] /api/cart/65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - 23:03:18"}
+{"level":"http","message":"[POST] /65e4edfbad58f8df5bb2ef21/product/6549bd3373edfc3edc82a2e6 - 23:03:18"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 23:03:33"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 23:03:34"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 23:03:35"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 23:03:35"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 23:03:36"}
