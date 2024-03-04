@@ -10,8 +10,11 @@
                     <div>
                         <button type="button" class="removeProduct"> Delete Product </button>
                     </div>
+                <br>
         </fieldset>
     </div>
+
+    <h2>Hola {{user.firstName}}</h2>
 </div>
 
 
@@ -23,9 +26,11 @@
 
     //REMOVE PRODUCT FUNCTION
     function removeProduct(){
+        const userEmail = '{{user.email}}';
+        const userRol = '{{user.rol}}';
         const productIDToRemove = document.getElementById("productIdRemove").value;
         console.log("Producto removido con ID:" , productIDToRemove);
-        //socket.emit('removeProductMongo', productIDToRemove);
+        socket.emit('removeProductMongo', {productIDToRemove, userRol, userEmail});
     }
 </script>
 <script src="/js/index.js" /></script>

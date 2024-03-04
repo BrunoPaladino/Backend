@@ -56,41 +56,5 @@
         })
     })
 
-    //ADD PRODUCT LISTENER
-    buttonAdd = document.querySelector(".addProduct");
-    buttonAdd.addEventListener("click", addProduct);
-
-    //ADD PRODUCT FUNCTION
-    function addProduct(){
-        let productIDToAdd = document.getElementById("productTitle").value;
-        let productDescriptionToAdd = document.getElementById("productDescription").value;
-        let productPriceToAdd = document.getElementById("productPrice").value;
-        let productCodeToAdd = document.getElementById("productCode").value;
-
-        const newProduct ={
-            title: productIDToAdd,
-            description: productDescriptionToAdd,
-            price: productPriceToAdd,
-            thumbnail :'toAdd',
-            code : productCodeToAdd,
-            status:'toAdd',
-            stock: 10,
-            category: 'toAdd',
-        };
-
-        socket.emit('addProductMongo', newProduct);
-    };
-
-/*
-    //REMOVE PRODUCT LISTENER
-    buttonRemove = document.querySelector(".removeProduct");
-    buttonRemove.addEventListener("click", removeProduct);
-
-    //REMOVE PRODUCT FUNCTION
-    function removeProduct(){
-        const productIDToRemove = document.getElementById("productIdRemove").value;
-        socket.emit('removeProductMongo', productIDToRemove);
-        console.log("Producto removido con ID:" , productIDToRemove);
-    }*/
 </script>
 <script src="/js/index.js" /></script>

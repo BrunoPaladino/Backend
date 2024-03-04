@@ -26,6 +26,7 @@ import config from './config/config.js';            //config es la configuracion
 import productModel from './dao/mongo/models/products.model.js';
 import userModel from './dao/mongo/models/user.model.js';
 import { addDevelopmentLogger, addProductionLogger } from './utils/logger.js';
+import { StoreService } from './services/index.js';
 
 const app = express();
 const server = http.createServer(app);
@@ -62,14 +63,30 @@ socketServer.on('connection', (socket) => {     //socketServer.on se usa para es
         //socketServer.emit('productListUpdated', productManager.getProducts());
     });
     socket.on('addProductMongo', async (newProduct)=>{
-        const listOfCarts = await cartModel.findOne();
-        listOfCarts.products.push(newProduct);
-        await listOfCarts.save();
+        try{
+            const productInstance = new productModel(newProduct);   //instanciamos el nuevo producto
+            await productInstance.save();               //guardamos el producto en la base de datos
+            console.log('New product added to the store:', newProduct);
+        } catch(error){
+            console.error('Error adding the new product in the store: ', error);
+        }
     })
-/*     socket.on('removeProductMongo', async (productIdToRemove)=>{
-        const productToRemove = await productModel.findOne({code: productIdToRemove});
-        console.log(productToRemove)
-    }) */
+    socket.on('removeProductMongo', async ({productIDToRemove, userRol, userEmail})=>{
+        try{
+            const productToRemove = await productModel.findOne({code: productIDToRemove});
+            if(userRol === 'Administrador'){
+                await productToRemove.deleteOne();
+                console.log('The product was eliminated successfully by the administrator user:  ', productToRemove);
+            } else if (userRol === 'Premium' && productToRemove.owner === userEmail) {
+                await productToRemove.deleteOne();
+                console.log('The product was eliminated successfully by the premium user:  ', productToRemove);
+            } else {
+                console.log('The product cannot be eliminated by a premium user');
+            }
+        } catch (error){
+            console.error('Error removing the product: ', error);
+        }
+    })
     socket.on('addProductToCart', async (productIDToAdd, userLoggedEmail)=>{
         const userLogged = await userModel.findOne({ email: userLoggedEmail});
         if (userLogged) {

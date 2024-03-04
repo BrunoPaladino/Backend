@@ -156,23 +156,28 @@ router.get('/profile', (req,res)=>{
     if(user!= undefined && user.rol === "Administrador"){
         const isAdmin = user;
         res.render('profile',{isAdmin})
-    } else {
-        if(user!= undefined && user.rol != "Administrador"){
-            res.render('profile',{user});
-        } else {
-            res.render('profile',{});
+    } else if(user!= undefined && user.rol === "Premium"){
+        const isPremium = user;
+        res.render('profile',{isPremium})
+        }else{
+            if(user!= undefined && user.rol != "Administrador"){
+                res.render('profile',{user});
+            } else {
+                res.render('profile',{});
         }
     }
 })
 
 //Agregar Producto Mongo
 router.get('/addproduct', (req, res) =>{
-    res.render('addProduct')
+    const user = req.session.user;
+    res.render('addProduct', {user})
 })
 
 //Eliminar Producto Mongo
 router.get('/removeproduct', (req, res) =>{
-    res.render('removeProduct')
+    const user = req.session.user;
+    res.render('removeProduct', {user})
 })
 
 //Actualizar Producto Mongo

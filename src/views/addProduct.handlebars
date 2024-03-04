@@ -22,38 +22,11 @@
         </fieldset>
     </div>
 
-
 </div>
 
 
 <script src="/socket.io/socket.io.js" /></script>       {{!-- Los scripts comunican las view con el socket --}}
-<script src="/src/dao/models/carts.model.js"></script>
 <script>
-    //const socket = io();
-    document.addEventListener('DOMContentLoaded',() => {
-        const buttonToConfirmPurchase = document.querySelector('#confirmPurchase');
-        buttonToConfirmPurchase.addEventListener("click", (button) => {
-            const cid = "{{user.cart}}";
-            console.log(cid);
-                        fetch(`/api/cart/${cid}/purchase`,{
-                method: 'POST',
-                headers: {
-                    'Content-Type':'application/json',
-                }
-            })
-            .then((Response)=>{
-                if(Response.status === 200){
-                    alert('Purchase confirmed');
-                } else {
-                    alert ('The purchase was not confirmed successfully')
-                }
-            })
-            .catch((Error) => {
-                console.error('Error in the antempt to confirm the purchase:', error);
-                alert('Error in the antempt to confirm the purchase')
-            })
-        })
-    })
 
     //ADD PRODUCT LISTENER
     buttonAdd = document.querySelector(".addProduct");
@@ -61,12 +34,29 @@
 
     //ADD PRODUCT FUNCTION
     function addProduct(){
+        const userEmail = '{{user.email}}'
+        const userRol = '{{user.rol}}'
         let productIDToAdd = document.getElementById("productTitle").value;
         let productDescriptionToAdd = document.getElementById("productDescription").value;
         let productPriceToAdd = document.getElementById("productPrice").value;
         let productCodeToAdd = document.getElementById("productCode").value;
 
-        const newProduct ={
+        if(userRol === "Premium"){
+            const newProduct ={
+                title: productIDToAdd,
+                description: productDescriptionToAdd,
+                price: productPriceToAdd,
+                thumbnail :'toAdd',
+                code : productCodeToAdd,
+                status:'toAdd',
+                stock: 10,
+                category: 'toAdd',
+                owner: userEmail
+            };
+            console.log(newProduct)
+            socket.emit('addProductMongo', newProduct);
+        } else {
+            const newProduct ={
             title: productIDToAdd,
             description: productDescriptionToAdd,
             price: productPriceToAdd,
@@ -75,21 +65,12 @@
             status:'toAdd',
             stock: 10,
             category: 'toAdd',
-        };
-
-        socket.emit('addProductMongo', newProduct);
+            owner: 'admin'
+            };
+            console.log(newProduct)
+            socket.emit('addProductMongo', newProduct);
+        }
     };
 
-/*
-    //REMOVE PRODUCT LISTENER
-    buttonRemove = document.querySelector(".removeProduct");
-    buttonRemove.addEventListener("click", removeProduct);
-
-    //REMOVE PRODUCT FUNCTION
-    function removeProduct(){
-        const productIDToRemove = document.getElementById("productIdRemove").value;
-        socket.emit('removeProductMongo', productIDToRemove);
-        console.log("Producto removido con ID:" , productIDToRemove);
-    }*/
 </script>
 <script src="/js/index.js" /></script>

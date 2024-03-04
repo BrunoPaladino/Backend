@@ -28,11 +28,35 @@
             </div>
             <br>
         </div>
-
+    {{else if isPremium}}
+    <h1>Welcome Premium User</h1>
+        <div>
+            <h2>User Profile</h1>
+            <div>
+                <h3>First Name: {{isPremium.firstName}}</h3>
+                <h3>Last Name: {{isPremium.lastName}}</h3>
+                <h3>Email: {{isPremium.email}}</h3>
+                <h3>Age: {{isPremium.age}}</h3>
+                <h3>Rol: {{isPremium.rol}}</h3>
+            </div>
+        </div>
+            <h2>Here you can control our store</h1>
+            <div>
+                <ul>
+                    <li>
+                        <a href="/addproduct">Add a new product</a>
+                    </li>
+                    <li>
+                        <a href="/removeproduct">Delete a product</a>
+                    </li>
+                </ul>
+            </div>
+            <br>
+        </div>
     {{else if user}}
         <h1>Welcome user!</h1>
         <div>
-            <h2>Profile User</h1>
+            <h2>User Profile</h1>
             <div>
                 <h3>First Name: {{user.firstName}}</h3>
                 <h3>Last Name: {{user.lastName}}</h3>
