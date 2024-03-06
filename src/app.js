@@ -28,6 +28,9 @@ import userModel from './dao/mongo/models/user.model.js';
 import { addDevelopmentLogger, addProductionLogger } from './utils/logger.js';
 import { StoreService } from './services/index.js';
 
+import swaggerJSDoc from 'swagger-jsdoc';
+import swaggerUiExpress from 'swagger-ui-express';
+
 const app = express();
 const server = http.createServer(app);
 const socketServer = new Server(server);      //es un servidor para trabajar con socket
@@ -54,6 +57,21 @@ app.use(session({
 initializePassport();
 app.use(passport.initialize());
 app.use(passport.session());
+
+//Configuracion de Swagger para Documentar la API
+const swaggerOptions = {
+    definition: {
+        openapi: '3.0.1',           //determinamos las reglas que seria el openapi
+        info:{
+            title: 'API Documentation',
+            description: 'API to sell products across the world'
+        }
+    },
+    apis:[`${__dirname}/./docs/**/*.yaml`]         //aqui colocamos la ruta a los archivos que tendran la documentacion, en este caso la carpeta docs
+}
+
+const spec = swaggerJSDoc(swaggerOptions);
+app.use('/apidocs', swaggerUiExpress.serve, swaggerUiExpress.setup(spec));
 
 //WEBSOCKETS
 socketServer.on('connection', (socket) => {     //socketServer.on se usa para escuchar la conexion de un socket nuevo
