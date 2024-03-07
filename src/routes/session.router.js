@@ -51,16 +51,26 @@ sessionRouter.post('/login', passport.authenticate('login', {failureRedirect: '/
         req.developmentLogger.debug(`The user doesnt exist in our data base`)
         return res.status(400).send({status:"error", error:"The user doesnt exist in our data base"})
     }
+    const actualLogin = new Date().getTime()        //asigna la fecha del dia
+    try{
+        await userModel.findOneAndUpdate({email: req.user.email}, {lastLogin: actualLogin})
+
+    } catch(error){
+        console.error('Error updating lastLogin in the database:', error);
+        return res.status(500).send({ status: "error", error: "Internal server error" });
+    }
+    
+    
     req.session.user = {
         firstName : req.user.firstName,
         lastName : req.user.lastName,
         email: req.user.email,
         age: req.user.age,
+        lastLogin: actualLogin,                 //almaceno la fecha en el ultimo inicio de sesion
         rol: req.user.rol,
         cart: req.user.cart
     }
     res.redirect('/profile');
-    /* res.send({status: "success", payload: req.user}); */
 });
 
 sessionRouter.get('/faillogin', async(req, res)=>{

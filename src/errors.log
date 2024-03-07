@@ -1,0 +1,86 @@
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 23:42:24"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 23:42:24"}
+{"level":"http","message":"[GET] /cart - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /cart - 23:42:27"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - 23:42:28"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 23:42:28"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 23:42:28"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 23:42:29"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 23:42:30"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 23:42:31"}
+{"level":"http","message":"[GET] /api/products - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /api/products - 23:42:34"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /api/users - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /api/users - 23:42:41"}
+{"level":"http","message":"[GET] /api/users/data - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /api/users/data - 23:42:52"}
+{"level":"http","message":"[GET] /api/users - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /api/users - 23:46:24"}
+{"level":"http","message":"[GET] /api/users/prueba - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /api/users/prueba - 23:47:41"}
+{"level":"http","message":"[GET] /api/users/prueba - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /api/users/prueba - 0:20:33"}
+{"level":"http","message":"[GET] /api/users - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /api/users - 0:21:13"}
+{"level":"http","message":"[GET] /api/users/prueba - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /api/users/prueba - 0:21:32"}
+{"level":"http","message":"[GET] /api/users/prueba - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /api/users/prueba - 0:22:13"}
+{"level":"http","message":"[GET] /api/users - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /api/users - 0:23:26"}
+{"level":"http","message":"[GET] /api/users - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /api/users - 0:23:53"}
+{"level":"http","message":"[GET] /api/users - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /api/users - 0:23:56"}
+{"level":"http","message":"[GET] /api/users - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /api/users - 0:24:21"}
+{"level":"http","message":"[GET] /api/users/datos - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /api/users/datos - 0:24:32"}
+{"level":"http","message":"[GET] /api/users - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /api/users - 0:28:59"}
+{"level":"http","message":"[GET] /api/users/datos - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /api/users/datos - 0:29:05"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 0:55:26"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 0:55:27"}
+{"level":"http","message":"[GET] /singup - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /singup - 0:55:29"}
+{"level":"http","message":"[POST] /api/session/singup - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/singup - 0:58:00"}
+{"level":"http","message":"[POST] /singup - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 0:58:02"}
+{"level":"http","message":"[GET] /singup - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /singup - 0:59:35"}
+{"level":"http","message":"[POST] /api/session/singup - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/singup - 1:00:00"}
+{"level":"http","message":"[POST] /singup - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 1:00:01"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 1:00:58"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 1:00:59"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:01:00"}
+{"level":"http","message":"[GET] /cart - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /cart - 1:01:37"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - 1:01:37"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:01:38"}
+{"level":"http","message":"[DELETE] /api/users/lastLogin - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[DELETE] /api/users/lastLogin - 1:36:32"}
+{"level":"http","message":"[DELETE] /api/users/lastLogin - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[DELETE] /api/users/lastLogin - 1:37:02"}

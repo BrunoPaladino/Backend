@@ -20,6 +20,7 @@ const userSchema = new mongoose.Schema({
     password: String,
     resetPasswordToken: String,                     //restaurar password por mail
     resetPasswordExpires: Number,
+    lastLogin: Number,
     rol: String,
 
     //referencia al carrito del usuario

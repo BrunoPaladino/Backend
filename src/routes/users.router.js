@@ -6,12 +6,36 @@ import { UserService } from '../services/index.js';
 
 const usersRouter = express.Router();
 
+/*
+/RUTAS USANDO FACTORY
+*/
 
-//Rutas usando factory
-usersRouter.get('/', getUsers);
-usersRouter.get('/:uid', getUserById);
+//Traer los datos de todos los usuarios
+usersRouter.get('/', getUsers);  
+
+//Grabar un usuario
 usersRouter.post('/', saveUser);
-usersRouter.post('/premium/:uid', async(req,res)=>{
+
+//Traer los datos principales de los usuarios
+usersRouter.get('/data', async(req,res)=>{             
+        try {
+                const users = await userModel.find({}, { firstName: 1, email: 1, rol: 1, _id: 0 });
+                if (users.length === 0) {
+                        return res.status(404).json({ message: 'The users data base is empty' });
+                }
+                res.status(200).json(users);
+        } catch (error) {
+                console.error('Error searching the users data:', error);
+                res.status(500).json({ message: 'Error searching the users data.' });
+        }
+        ;
+});
+
+//Buscar usuario por Id
+usersRouter.get('/:uid', getUserById);
+
+//Cambiar de usuario premium a estandar y viceversa
+usersRouter.post('/premium/:uid', async(req,res)=>{    
         const uid = req.params.uid;                           // Extraer el _id del parámetro uid
         const user = await userModel.findById(uid);
         console.log(user)
@@ -33,12 +57,19 @@ usersRouter.post('/premium/:uid', async(req,res)=>{
                 console.error('The user rol cannot be changed');
                 res.status(500).send('Error changing the user rol')
         }
-})
-usersRouter.get('/data', async()=>{
-        const result = await UserService.getUsers();
-        console.log(result);
-})
+});
 
+//Eliminar usuario con ultima conexion mayor a 2 dias
+usersRouter.delete('/lastLogin', async(req,res)=>{             //date.now da la hora actual en milisegundos
+        try{
+        const timeLimitation = (Date.now() - (2*24*60*60*1000) )        //hora actual menos 2 dias en segundos
+        const usersDeleted = await userModel.deleteMany({lastLogin: {$lt:timeLimitation}})
+        res.status(200).json({ message: `${usersDeleted.deletedCount} users deleted successfully.` });
+        } catch (error) {
+        console.error('Error deleting users:', error);
+        res.status(500).json({ message: 'Internal server error.' });
+        }
+})
 
 
 /* 
