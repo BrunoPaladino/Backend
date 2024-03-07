@@ -2,6 +2,7 @@ import express from 'express';
 import userModel from '../dao/mongo/models/user.model.js';
 
 import { getUsers, getUserById, saveUser } from '../controllers/user.controller.js';
+import { UserService } from '../services/index.js';
 
 const usersRouter = express.Router();
 
@@ -32,6 +33,10 @@ usersRouter.post('/premium/:uid', async(req,res)=>{
                 console.error('The user rol cannot be changed');
                 res.status(500).send('Error changing the user rol')
         }
+})
+usersRouter.get('/data', async()=>{
+        const result = await UserService.getUsers();
+        console.log(result);
 })
 
 
