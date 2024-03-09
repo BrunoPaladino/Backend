@@ -55,13 +55,8 @@ export default class CartRepository{
     completePurchase = async (cid) => {
         const cart = await this.getCartById(cid);
         console.log(cart);
-        //const usersList = await UserService.getUsers();
-        //console.log(usersList);
-        //let actualUser = usersList.find((user) => user.cart === cid);
-        //console.log(actualUser)
         let totalAmountPurchase = 0;
         const listOfProductsInStore = await StoreService.getStores();
-        console.log(listOfProductsInStore);
         for (const product of cart.products){           //uso for..of, en lugar de map, para poder usar await despues y poder actualizar el stock de los productos comprados
             const actualProductIndex = listOfProductsInStore.findIndex( (productInStore) => product.productId.toString() === productInStore._id.toString());
             if((actualProductIndex !== -1) && (listOfProductsInStore[actualProductIndex].stock >= product.quantity) ){
@@ -84,5 +79,6 @@ export default class CartRepository{
         };
         await TicketService.createTicket(ticket);
         console.log(`Purchase completed, ticket code: ${ticket.code}, amount: ${ticket.amount}`);
+        return(ticket)
     }
 }

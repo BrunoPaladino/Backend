@@ -31,6 +31,10 @@ import { StoreService } from './services/index.js';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUiExpress from 'swagger-ui-express';
 
+//Importacion de SDK y configuracion de Mercadopago
+import { MercadoPagoConfig } from 'mercadopago';
+const client = new MercadoPagoConfig({ accessToken: 'YOUR_ACCESS_TOKEN' });
+
 const app = express();
 const server = http.createServer(app);
 const socketServer = new Server(server);      //es un servidor para trabajar con socket

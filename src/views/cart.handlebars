@@ -19,6 +19,9 @@
     <div>
         <button id="confirmPurchase" >Confirm the Purchase</button>
     </div>
+    <div>
+        <div id="wallet_container"></div>           {{!-- Donde iria el boton de MercadoPago --}}
+    </div>
         {{else}}
         <div>
             <h2>Your order is empty {{user.firstName}}</h2>
@@ -29,6 +32,7 @@
 
 <script src="/socket.io/socket.io.js" /></script>       {{!-- Los scripts comunican las view con el socket --}}
 <script src="/src/dao/models/carts.model.js"></script>
+<script src="https://sdk.mercadopago.com/js/v2"></script>           {{!-- SDK MercadoPago.js --}}
 <script>
     //const socket = io();
     document.addEventListener('DOMContentLoaded',() => {
@@ -44,7 +48,7 @@
             })
             .then((Response)=>{
                 if(Response.status === 200){
-                    alert('Purchase confirmed');
+                    alert('Purchase confirmed! ☺');
                 } else {
                     alert ('The purchase was not confirmed successfully')
                 }

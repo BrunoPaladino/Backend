@@ -1,4 +1,5 @@
 import storeModel from "../dao/mongo/models/stores.model.js";
+import { createCheckoutButton } from "../mercadoPago.js";
 import { CartService, StoreService } from "../services/index.js";
 
 export const getCarts = async (req, res) => {
@@ -50,10 +51,17 @@ export const addProductToCart = async (req, res) => {
 
 export const completePurchase = async (req, res) => {
     const {cid} = req.params;
+    console.log(cid);
     try{
         req.productionLogger.info(`The customer is completing the purchase of the cart: ${cid}`);
-        const result = await CartService.completePurchase(cid);
-        res.status(200).send({status: 'success', payload: result})
+        const result = await CartService.completePurchase(cid);                 
+        console.log(result)
+        const preference = {                            //preference sera el elemento que pasamos a mercadopago
+            code: result.code,
+            totalPrice: result.amount
+        }
+        createCheckoutButton(preference.id)
+        res.status(200).send({status: 'success', payload: preference})
     } catch (error){
         req.productionLogger.error(`Error finishing the purchase: ${error}`)
         res.status(500).send({ status: 'error', message: 'Error finishing the purchase' });
