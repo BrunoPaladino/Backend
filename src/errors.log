@@ -84,3 +84,386 @@
 {"level":"http","message":"[DELETE] /api/users/lastLogin - 1:36:32"}
 {"level":"http","message":"[DELETE] /api/users/lastLogin - function toLocaleTimeString() { [native code] }"}
 {"level":"http","message":"[DELETE] /api/users/lastLogin - 1:37:02"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 23:40:12"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 23:40:12"}
+{"level":"http","message":"[GET] /favicon.ico - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /favicon.ico - 23:40:13"}
+{"level":"http","message":"[GET] /singup - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /singup - 23:40:14"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 23:40:15"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 23:40:18"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 23:40:20"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 23:40:20"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 23:40:27"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 0:55:42"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 0:56:50"}
+{"level":"http","message":"[GET] /usersControl - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /usersControl - 1:01:05"}
+{"level":"http","message":"[GET] /usersControl - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /usersControl - 1:02:27"}
+{"level":"http","message":"[GET] /usersControl - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /usersControl - 1:02:45"}
+{"level":"http","message":"[GET] /usersControl - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /usersControl - 1:04:17"}
+{"level":"http","message":"[GET] /usersControl - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /usersControl - 1:05:30"}
+{"level":"http","message":"[GET] /cart - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /cart - 1:09:56"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - 1:09:57"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:09:57"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 1:10:00"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 1:10:24"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 1:11:57"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 1:14:17"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:14:19"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 1:15:13"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:15:14"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 1:15:39"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:15:40"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 1:17:36"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:17:36"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 1:17:40"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:17:40"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 1:19:03"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:19:04"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 1:19:34"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:19:35"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 1:21:17"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:21:17"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 1:21:19"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 1:21:22"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 1:21:24"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:21:25"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 1:21:27"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:21:27"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 1:23:01"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:23:02"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 1:23:17"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:23:19"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 1:23:39"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:23:41"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 1:26:06"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:26:08"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 1:26:11"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 1:26:14"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 1:26:15"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:26:16"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 1:26:18"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:26:19"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 1:27:42"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:27:43"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 1:27:52"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 1:27:52"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:27:52"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 1:27:57"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:27:57"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 1:30:00"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:30:01"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 1:30:03"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 1:30:07"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 1:30:08"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:30:08"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 1:30:10"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:30:10"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 1:30:50"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:30:51"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 1:30:55"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:30:55"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 1:30:57"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 1:30:57"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:30:58"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 1:31:01"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:31:02"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 1:33:05"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:33:06"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 1:33:08"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 1:33:10"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 1:33:11"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:33:12"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 1:33:14"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:33:15"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 1:35:59"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 1:36:02"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 1:36:04"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:36:04"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 1:36:06"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:36:07"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 1:50:19"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:50:20"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 1:50:22"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 1:50:26"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 1:50:27"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:50:27"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 1:50:29"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 1:50:30"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 6:09:53"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 6:09:55"}
+{"level":"http","message":"[GET] /favicon.ico - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /favicon.ico - 6:09:55"}
+{"level":"http","message":"[GET] /cart - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /cart - 6:09:56"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - 6:09:57"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 6:09:58"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 6:09:58"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 6:10:01"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 6:10:02"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 6:10:03"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 6:10:04"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 6:10:05"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 6:14:44"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 6:14:45"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 6:15:23"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 6:15:48"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 6:15:50"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 6:17:34"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 6:17:34"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 6:18:06"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 6:18:07"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 6:20:35"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 6:20:36"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 6:22:19"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 6:22:20"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 6:22:45"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 6:22:46"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 6:34:26"}
+{"level":"http","message":"[GET] /singup - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /singup - 6:34:28"}
+{"level":"http","message":"[POST] /api/session/singup - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/singup - 6:34:44"}
+{"level":"http","message":"[POST] /singup - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 6:34:46"}
+{"level":"http","message":"[GET] /singup - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /singup - 6:34:53"}
+{"level":"http","message":"[POST] /api/session/singup - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/singup - 6:35:06"}
+{"level":"http","message":"[POST] /singup - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 6:35:07"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 6:35:12"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 6:35:13"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 6:35:14"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 6:35:15"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 6:35:16"}
+{"level":"http","message":"[POST] /api/users/premium/65eadbb500abe59ea79fb904 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/premium/65eadbb500abe59ea79fb904 - 19:02:34"}
+{"level":"http","message":"[POST] /api/users/premium/65eadbb500abe59ea79fb904 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/premium/65eadbb500abe59ea79fb904 - 19:03:15"}
+{"level":"http","message":"[POST] /api/users/premium/65eadbb500abe59ea79fb904 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/premium/65eadbb500abe59ea79fb904 - 19:08:01"}
+{"level":"http","message":"[POST] /api/users/premium/65eadbb500abe59ea79fb904 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/premium/65eadbb500abe59ea79fb904 - 19:08:15"}
+{"level":"http","message":"[POST] /api/users/premium/65eadbb500abe59ea79fb904 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/premium/65eadbb500abe59ea79fb904 - 19:09:15"}
+{"level":"http","message":"[POST] /api/users/premium/65eadbb500abe59ea79fb904 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/premium/65eadbb500abe59ea79fb904 - 19:09:30"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 19:11:51"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:11:52"}
+{"level":"http","message":"[GET] /favicon.ico - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /favicon.ico - 19:11:53"}
+{"level":"http","message":"[DELETE] /api/users/65eadbb500abe59ea79fb904 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[DELETE] /api/users/65eadbb500abe59ea79fb904 - 19:20:38"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 19:41:21"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:41:22"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 19:44:21"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:44:22"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 19:45:05"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:45:07"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 19:46:16"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:46:17"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 19:52:25"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:52:27"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 19:53:21"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:53:23"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 19:54:28"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:54:28"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 19:55:27"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:55:28"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 20:22:57"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 20:22:57"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 20:23:38"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 20:23:39"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 21:16:27"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 21:16:28"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 21:39:27"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 21:39:28"}
+{"level":"http","message":"[POST] /api/users/premium/65eadbca00abe59ea79fb90c - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/premium/65eadbca00abe59ea79fb90c - 21:39:31"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 21:39:38"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 21:39:38"}
+{"level":"http","message":"[POST] /api/users/premium/65e93bc046418cad9010af56 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/users/premium/65e93bc046418cad9010af56 - 21:55:27"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 22:01:26"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:01:27"}
+{"level":"http","message":"[DELETE] /api/users/65eadbca00abe59ea79fb90c - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[DELETE] /api/users/65eadbca00abe59ea79fb90c - 22:01:31"}
+{"level":"http","message":"[GET] /userscontrol - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /userscontrol - 22:01:35"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 22:01:35"}

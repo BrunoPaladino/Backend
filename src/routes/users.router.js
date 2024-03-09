@@ -1,7 +1,7 @@
 import express from 'express';
 import userModel from '../dao/mongo/models/user.model.js';
 
-import { getUsers, getUserById, saveUser } from '../controllers/user.controller.js';
+import { getUsers, getUserById, saveUser, changeRol, deleteUser } from '../controllers/user.controller.js';
 import { UserService } from '../services/index.js';
 
 const usersRouter = express.Router();
@@ -35,29 +35,10 @@ usersRouter.get('/data', async(req,res)=>{
 usersRouter.get('/:uid', getUserById);
 
 //Cambiar de usuario premium a estandar y viceversa
-usersRouter.post('/premium/:uid', async(req,res)=>{    
-        const uid = req.params.uid;                           // Extraer el _id del parámetro uid
-        const user = await userModel.findById(uid);
-        console.log(user)
-        try{
-                let newRol;
-                if(user.rol ==='Premium'){
-                        newRol = 'Usuario';
-                } else if(user.rol ==='Usuario') {
-                        newRol = 'Premium';
-                } else {
-                        console.log('The user is an Administrator')
-                        return res.status(403).send('The user is an Administrator')
-                }
-                user.rol=newRol;
-                await user.save();
-                console.log(`The user ${user.firstName} has changed his rol to ${newRol}`);
-                res.status(200).send(`The user has changed his rol to ${newRol}`)
-        } catch(error){
-                console.error('The user rol cannot be changed');
-                res.status(500).send('Error changing the user rol')
-        }
-});
+usersRouter.post('/premium/:uid', changeRol);
+
+//Eliminar usuario
+usersRouter.delete('/:uid', deleteUser)
 
 //Eliminar usuario con ultima conexion mayor a 2 dias
 usersRouter.delete('/lastLogin', async(req,res)=>{             //date.now da la hora actual en milisegundos
@@ -112,12 +93,6 @@ usersRouter.put('/:uid', async (req, res) =>{
         res.send ({status: "success", payload: result});
 });
 
-//DELETE USER
-usersRouter.delete('/:uid', async (req,res)=>{
-        const userID = req.params.uid;
-        const result = await userModel.deleteOne({_id: userID});
-        res.send ({status: "success", payload: result});
-})
  */
 
 export default usersRouter;

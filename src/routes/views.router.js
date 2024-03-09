@@ -14,6 +14,8 @@ import nodemailer from 'nodemailer';
 import crypto from 'crypto'
 import { createHash } from "../utils.js";
 import bcrypt from 'bcrypt';
+import UserRepository from "../services/user.repository.js";
+import { UserService } from "../services/index.js";
 
 const productManager = new ProductManager();
 const router = express.Router();
@@ -166,6 +168,27 @@ router.get('/profile', (req,res)=>{
                 res.render('profile',{});
         }
     }
+})
+
+//Control de usuarios desde el Administrador
+router.get('/userscontrol', async (req,res)=>{
+    try{
+        const adminLogged= req.session.user;
+        const users = await userModel.find()
+        const listOfUsers = users.map(user => ({
+            firstName: user.firstName,
+            lastName: user.lastName,
+            email: user.email,
+            age: user.age,
+            rol: user.rol,
+            _id: user._id
+        }));
+        console.log(listOfUsers)
+        res.render('userscontrol', {listOfUsers: listOfUsers, adminLogged: adminLogged})
+        } catch(error){
+            console.error(`Error taking the list of users: `, error);
+            res.status(500).send(`Error taking the list of users`)
+        }
 })
 
 //Agregar Producto Mongo

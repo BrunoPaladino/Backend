@@ -1,0 +1,89 @@
+<div>
+    <h1>Users Control</h1>
+
+{{log "Cantidad de usuarios:" listOfUsers.length}}
+
+<h2>{{adminLogged.firstName}}</h2>
+
+    {{#each listOfUsers}}
+        <div>
+            <h3>First Name: {{this.firstName}}</h3>
+            <h3>Last Name: {{this.lastName}}</h3>
+            <h3>Email: {{this.email}}</h3>
+            <h3>Age: {{this.age}}</h3>
+            <h3>Rol: {{this.rol}}</h3>
+            <h3>Id: {{this._id}}</h3>
+        </div>
+        <div>
+            <button userId={{this._id}} class="changeRolButton" >Change Rol</button>
+        </div>
+        <div>
+            <button userId={{this._id}} class="deleteUserButton" >Delete User</button>
+        </div>
+    {{/each}}
+</div>
+
+<script src="/socket.io/socket.io.js" /></script>       {{!-- Los scripts comunican las view con el socket --}}
+<script src="/js/index.js" /></script>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        const buttonsChangeRol = document.querySelectorAll('.changeRolButton')
+        buttonsChangeRol.forEach((button)=>{
+            button.addEventListener("click", (e)=>{
+                const uid = e.currentTarget.getAttribute('userId');
+                console.log(uid)
+
+            fetch(`/api/users/premium/${uid}`,{
+                method: 'POST',
+                headers: {
+                    'Content-Type':'application/json',
+                },
+            })
+            .then((Response) => {
+                if(Response.status === 200){
+                    alert('The user has changed his rol');
+                } else {
+                    alert ('The user has not changed his rol')
+                }
+            })
+            .catch((Error) => {
+                console.error('Error in the antempt to change the users rol:', error);
+                alert('Error in the antempt to change the users rol')
+            })
+            })
+        })
+    })
+
+
+document.addEventListener('DOMContentLoaded', ()=>{
+        const buttonsDeleteUser = document.querySelectorAll('.deleteUserButton')
+        buttonsDeleteUser.forEach((button)=>{
+            button.addEventListener("click", (e)=>{
+                const uid = e.currentTarget.getAttribute('userId');
+                console.log(uid)
+
+            fetch(`/api/users/${uid}`,{
+                method: 'DELETE',
+                headers: {
+                    'Content-Type':'application/json',
+                },
+            })
+            .then((Response) => {
+                if(Response.status === 200){
+                    alert('The user was deleted succesfully');
+                } else {
+                    alert ('The user was not deleted succesfully')
+                }
+            })
+            .catch((Error) => {
+                console.error('Error in the antempt to delete the user:', error);
+                alert('Error in the antempt to delete the user')
+            })
+            })
+        })
+    })
+
+
+
+
+</script>
