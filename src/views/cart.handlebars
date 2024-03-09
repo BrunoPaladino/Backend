@@ -34,6 +34,8 @@
 <script src="/src/dao/models/carts.model.js"></script>
 <script src="https://sdk.mercadopago.com/js/v2"></script>           {{!-- SDK MercadoPago.js --}}
 <script>
+    const mp = new MercadoPago('TEST-b3f39045-107c-4aea-b5c1-4f1d81034a0d');
+
     //const socket = io();
     document.addEventListener('DOMContentLoaded',() => {
         const buttonToConfirmPurchase = document.querySelector('#confirmPurchase');
@@ -46,19 +48,33 @@
                     'Content-Type':'application/json',
                 }
             })
-            .then((Response)=>{
+
+            .then(async (Response)=>{
                 if(Response.status === 200){
+                    // Response 
+                    const responseID = await Response.json();
+
+                    mp.bricks().create("wallet", "wallet_container", {
+                    initialization: {
+                        preferenceId: responseID.payload,
+                    },
+                    customization: {
+                    texts: {
+                        valueProp: 'smart_option',
+                    },
+                    },
+                    })
                     alert('Purchase confirmed! ☺');
                 } else {
                     alert ('The purchase was not confirmed successfully')
                 }
             })
             .catch((Error) => {
-                console.error('Error in the antempt to confirm the purchase:', error);
+                console.error('Error in the antempt to confirm the purchase:', Error);
                 alert('Error in the antempt to confirm the purchase')
             })
         })
-    })
+    }) 
 
 </script>
 <script src="/js/index.js" /></script>

@@ -793,3 +793,373 @@
 {"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/purchase - 18:24:14"}
 {"level":"info","message":"The customer is completing the purchase of the cart: 65ec7e0727631804b20fcbbb"}
 {"level":"error","message":"Error finishing the purchase: ReferenceError: MercadoPago is not defined"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 18:58:47"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 18:58:48"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 18:58:52"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 18:58:54"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 18:58:55"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 18:58:56"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 18:58:58"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 18:59:00"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 18:59:01"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 18:59:02"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 18:59:04"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 18:59:07"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 18:59:09"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 18:59:09"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 18:59:12"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 18:59:13"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - 18:59:14"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - 18:59:14"}
+{"level":"info","message":"Product added to cart. Cart ID: 65ec7e0727631804b20fcbbb, Product ID: 6549bd3373edfc3edc82a2e6"}
+{"level":"http","message":"[GET] /cart - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /cart - 18:59:21"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - 18:59:22"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 18:59:23"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - 18:59:26"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/purchase - 18:59:26"}
+{"level":"info","message":"The customer is completing the purchase of the cart: 65ec7e0727631804b20fcbbb"}
+{"level":"error","message":"Error finishing the purchase: MongoServerError: E11000 duplicate key error collection: ecommerce.tickets index: code_1 dup key: { code: \"65ec7e0727631804b20fcbbb\" }"}
+{"level":"http","message":"[GET] /cart - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /cart - 19:00:13"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:00:14"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - 19:00:14"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 19:00:17"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 19:00:17"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:00:18"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 19:00:18"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:00:19"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - 19:00:20"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - 19:00:20"}
+{"level":"info","message":"Product added to cart. Cart ID: 65ec7e0727631804b20fcbbb, Product ID: 6549bd3373edfc3edc82a2e6"}
+{"level":"http","message":"[GET] /cart - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /cart - 19:00:23"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:00:24"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - 19:00:24"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - 19:00:33"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/purchase - 19:00:33"}
+{"level":"info","message":"The customer is completing the purchase of the cart: 65ec7e0727631804b20fcbbb"}
+{"level":"error","message":"Error finishing the purchase: ReferenceError: MercadoPago is not defined"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 19:10:39"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:10:40"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 19:10:41"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 19:10:44"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 19:10:45"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:10:46"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 19:10:59"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:11:00"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - 19:11:01"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - 19:11:01"}
+{"level":"info","message":"Product added to cart. Cart ID: 65ec7e0727631804b20fcbbb, Product ID: 6549bd3373edfc3edc82a2e6"}
+{"level":"http","message":"[GET] /cart - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /cart - 19:11:06"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - 19:11:07"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:11:08"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - 19:11:11"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/purchase - 19:11:11"}
+{"level":"info","message":"The customer is completing the purchase of the cart: 65ec7e0727631804b20fcbbb"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 19:28:18"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:28:19"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 19:28:20"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 19:28:21"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 19:28:23"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 19:28:24"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:28:25"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 19:28:27"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:28:28"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - 19:28:28"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - 19:28:28"}
+{"level":"info","message":"Product added to cart. Cart ID: 65ec7e0727631804b20fcbbb, Product ID: 6549bd3373edfc3edc82a2e6"}
+{"level":"http","message":"[GET] /cart - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /cart - 19:28:32"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - 19:28:33"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:28:34"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - 19:28:35"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/purchase - 19:28:35"}
+{"level":"info","message":"The customer is completing the purchase of the cart: 65ec7e0727631804b20fcbbb"}
+{"level":"error","message":"Error finishing the purchase: MongoServerError: E11000 duplicate key error collection: ecommerce.tickets index: code_1 dup key: { code: \"65ec7e0727631804b20fcbbb\" }"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 19:29:03"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:29:04"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - 19:29:08"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - 19:29:08"}
+{"level":"info","message":"Product added to cart. Cart ID: 65ec7e0727631804b20fcbbb, Product ID: 6549bd3373edfc3edc82a2e6"}
+{"level":"http","message":"[GET] /cart - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /cart - 19:29:12"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - 19:29:13"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:29:14"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - 19:29:21"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/purchase - 19:29:21"}
+{"level":"info","message":"The customer is completing the purchase of the cart: 65ec7e0727631804b20fcbbb"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 19:31:53"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:31:54"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 19:32:17"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:32:18"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 19:32:19"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 19:32:19"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 19:32:21"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 19:32:22"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:32:23"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 19:32:26"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:32:26"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd4873edfc3edc82a2e8 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd4873edfc3edc82a2e8 - 19:32:29"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/product/6549bd4873edfc3edc82a2e8 - 19:32:29"}
+{"level":"info","message":"Product added to cart. Cart ID: 65ec7e0727631804b20fcbbb, Product ID: 6549bd4873edfc3edc82a2e8"}
+{"level":"http","message":"[GET] /cart - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /cart - 19:32:34"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - 19:32:35"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:32:36"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 19:33:17"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:33:18"}
+{"level":"http","message":"[GET] /cart - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /cart - 19:33:19"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:33:21"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - 19:33:21"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - 19:33:23"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/purchase - 19:33:23"}
+{"level":"info","message":"The customer is completing the purchase of the cart: 65ec7e0727631804b20fcbbb"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 19:34:28"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:34:30"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd9073edfc3edc82a2f0 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd9073edfc3edc82a2f0 - 19:34:34"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/product/6549bd9073edfc3edc82a2f0 - 19:34:34"}
+{"level":"info","message":"Product added to cart. Cart ID: 65ec7e0727631804b20fcbbb, Product ID: 6549bd9073edfc3edc82a2f0"}
+{"level":"http","message":"[GET] /cart - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /cart - 19:34:40"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - 19:34:41"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:34:42"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - 19:34:44"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/purchase - 19:34:44"}
+{"level":"info","message":"The customer is completing the purchase of the cart: 65ec7e0727631804b20fcbbb"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 19:36:20"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:36:21"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/653942038f59aa1021c71686 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/653942038f59aa1021c71686 - 19:36:28"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/product/653942038f59aa1021c71686 - 19:36:28"}
+{"level":"info","message":"Product added to cart. Cart ID: 65ec7e0727631804b20fcbbb, Product ID: 653942038f59aa1021c71686"}
+{"level":"http","message":"[GET] /cart - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /cart - 19:36:33"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - 19:36:34"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:36:35"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - 19:36:41"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/purchase - 19:36:41"}
+{"level":"info","message":"The customer is completing the purchase of the cart: 65ec7e0727631804b20fcbbb"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 19:38:23"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:38:24"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - 19:38:33"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - 19:38:33"}
+{"level":"info","message":"Product added to cart. Cart ID: 65ec7e0727631804b20fcbbb, Product ID: 6549bd3373edfc3edc82a2e6"}
+{"level":"http","message":"[GET] /cart - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /cart - 19:38:37"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - 19:38:37"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:38:38"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - 19:38:39"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/purchase - 19:38:39"}
+{"level":"info","message":"The customer is completing the purchase of the cart: 65ec7e0727631804b20fcbbb"}
+{"level":"http","message":"[GET] /cart - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /cart - 19:41:28"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:41:29"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - 19:41:29"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 19:41:30"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 19:41:33"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 19:41:34"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:41:35"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 19:41:36"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:41:37"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - 19:41:38"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - 19:41:38"}
+{"level":"info","message":"Product added to cart. Cart ID: 65ec7e0727631804b20fcbbb, Product ID: 6549bd3373edfc3edc82a2e6"}
+{"level":"http","message":"[GET] /cart - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /cart - 19:41:42"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:41:43"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - 19:41:43"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - 19:41:56"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/purchase - 19:41:56"}
+{"level":"info","message":"The customer is completing the purchase of the cart: 65ec7e0727631804b20fcbbb"}
+{"level":"error","message":"Error finishing the purchase: MongoServerError: E11000 duplicate key error collection: ecommerce.tickets index: code_1 dup key: { code: \"65ec7e0727631804b20fcbbb\" }"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 19:45:05"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:45:06"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 19:45:07"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 19:45:12"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 19:45:13"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:45:13"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 19:45:14"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:45:15"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - 19:45:16"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - 19:45:16"}
+{"level":"info","message":"Product added to cart. Cart ID: 65ec7e0727631804b20fcbbb, Product ID: 6549bd3373edfc3edc82a2e6"}
+{"level":"http","message":"[GET] /cart - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /cart - 19:45:19"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - 19:45:20"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:45:21"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - 19:45:24"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/purchase - 19:45:24"}
+{"level":"info","message":"The customer is completing the purchase of the cart: 65ec7e0727631804b20fcbbb"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 19:49:05"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:49:06"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 19:49:31"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 19:49:35"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 19:49:36"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:49:36"}
+{"level":"http","message":"[GET] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /login - 19:49:39"}
+{"level":"http","message":"[POST] /api/session/login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/session/login - 19:49:42"}
+{"level":"http","message":"[POST] /login - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /profile - 19:49:43"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:49:43"}
+{"level":"http","message":"[GET] / - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] / - 19:49:46"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:49:46"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - 19:49:48"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/product/6549bd3373edfc3edc82a2e6 - 19:49:48"}
+{"level":"info","message":"Product added to cart. Cart ID: 65ec7e0727631804b20fcbbb, Product ID: 6549bd3373edfc3edc82a2e6"}
+{"level":"http","message":"[GET] /cart - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /cart - 19:49:57"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /src/dao/models/carts.model.js - 19:49:58"}
+{"level":"http","message":"[GET] /js/index.js - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[GET] /js/index.js - 19:49:59"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - function toLocaleTimeString() { [native code] }"}
+{"level":"http","message":"[POST] /api/cart/65ec7e0727631804b20fcbbb/purchase - 19:50:17"}
+{"level":"http","message":"[POST] /65ec7e0727631804b20fcbbb/purchase - 19:50:17"}
+{"level":"info","message":"The customer is completing the purchase of the cart: 65ec7e0727631804b20fcbbb"}

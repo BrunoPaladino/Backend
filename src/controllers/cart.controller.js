@@ -1,6 +1,8 @@
 import storeModel from "../dao/mongo/models/stores.model.js";
 import { createCheckoutButton } from "../mercadoPago.js";
 import { CartService, StoreService } from "../services/index.js";
+import { MercadoPagoConfig, Preference } from 'mercadopago';
+
 
 export const getCarts = async (req, res) => {
     const result = await CartService.getCarts();
@@ -22,7 +24,7 @@ export const createCart = async (req, res) => {
 export const resolveCart = async (req, res) => {
     const resolve = req.query;
     const id = req.params;
-
+    
     const result = await CartService.resolveCart(id, resolve);
     res.send({status: 'success', payload: result})
 }
@@ -54,14 +56,21 @@ export const completePurchase = async (req, res) => {
     console.log(cid);
     try{
         req.productionLogger.info(`The customer is completing the purchase of the cart: ${cid}`);
-        const result = await CartService.completePurchase(cid);                 
-        console.log(result)
-        const preference = {                            //preference sera el elemento que pasamos a mercadopago
-            code: result.code,
-            totalPrice: result.amount
-        }
-        createCheckoutButton(preference.id)
-        res.status(200).send({status: 'success', payload: preference})
+        const cart = CartService.getCartById(cid);
+        const resultTicket = await CartService.completePurchase(cid);
+        const client = new MercadoPagoConfig({ accessToken: 'TEST-5960060632517163-030910-a55d849894a5de67015dedf87912897b-197709645' });
+        const preference = new Preference(client);
+        const result = await preference.create({
+            body: {
+                items: [
+                    // llenar con items del carrito
+                    { title: 'Mi producto', quantity: 1, unit_price: 2000 }
+                ],
+            }
+        })
+
+        console.log(result.id);
+        res.status(200).send({status: 'success', payload: result.id})
     } catch (error){
         req.productionLogger.error(`Error finishing the purchase: ${error}`)
         res.status(500).send({ status: 'error', message: 'Error finishing the purchase' });
